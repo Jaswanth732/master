@@ -56,9 +56,9 @@ paths:
         \ no Invoice Id is provided, the rest input criteria will used</li>\n    <li>The\
         \ result will be mapped to a list of Invoice objects and will be returned\
         \ as the service response</li>\n</ul>"
-      operationId: search_invoice
+      operationId: searchInvoice
       parameters:
-      - name: Page_Number
+      - name: Page Number
         in: query
         description: Page Number
         required: true
@@ -67,7 +67,7 @@ paths:
         schema:
           minimum: 1
           type: integer
-      - name: Page_Size
+      - name: Page Size
         in: query
         description: Page size
         required: true
@@ -76,7 +76,7 @@ paths:
         schema:
           minimum: 1
           type: integer
-      - name: Invoice_Id
+      - name: Invoice Id
         in: query
         description: Invoice unique id
         required: true
@@ -84,7 +84,7 @@ paths:
         explode: true
         schema:
           type: string
-      - name: Batch_Id
+      - name: Batch Id
         in: query
         description: The batch unique id
         required: true
@@ -93,7 +93,7 @@ paths:
         schema:
           maxLength: 8
           type: string
-      - name: Policy_Id
+      - name: Policy Id
         in: query
         description: Policy unique Id
         required: true
@@ -102,7 +102,7 @@ paths:
         schema:
           maximum: 8
           type: integer
-      - name: Member_Id
+      - name: Member Id
         in: query
         description: Member unique id
         required: true
@@ -119,7 +119,7 @@ paths:
         explode: true
         schema:
           type: string
-      - name: Billing_Provider
+      - name: Billing Provider
         in: query
         description: The Billing Provider unique id
         required: true
@@ -127,7 +127,7 @@ paths:
         explode: true
         schema:
           type: string
-      - name: External_Reference_Id
+      - name: External Reference Id
         in: query
         description: 'The entity external reference id '
         required: true
@@ -135,7 +135,7 @@ paths:
         explode: true
         schema:
           type: string
-      - name: Service_Provider
+      - name: Service Provider
         in: query
         description: The service provider code
         required: false
@@ -787,7 +787,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
-      x-openapi-router-controller: swagger_server.controllers.invoice_controller
     put:
       tags:
       - Invoice
@@ -1033,7 +1032,7 @@ paths:
         \t\t\t\t</div>\n\t\t\t</li>\n\t\t</ul>\n\t</li>\n</ul>\n<ul>\n\t<li>\n\t\t\
         <strong>Reply :</strong>The service will reply with the corrected invoice\
         \ object enriched with the new invoice ID\n\t</li>\n</ul>"
-      operationId: correct_invoice
+      operationId: correctInvoice
       requestBody:
         content:
           application/json:
@@ -2191,7 +2190,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.invoice_controller
     post:
       tags:
       - Invoice
@@ -2315,7 +2313,7 @@ paths:
         \t\t\t</div>\n\t\t</div>\n\t</li>\n</ul>\n<ul>\n\t<li>\n\t\t<strong>Reply\
         \ :</strong>The service will reply with the created invoice object enriched\
         \ with the new invoice ID\n\t</li>\n</ul>"
-      operationId: create_invoice
+      operationId: createInvoice
       requestBody:
         content:
           application/json:
@@ -3329,7 +3327,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.invoice_controller
     delete:
       tags:
       - Invoice
@@ -3432,7 +3429,7 @@ paths:
         \ is not eligible for cancellation</span>\n\t\t\t\t\t\t\t\t</span>\n\t\t\t\
         \t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\
         \t\t</ul>\n\t</ul>\n</div>\n</div>\n<p>"
-      operationId: cancel_invoice
+      operationId: cancelInvoice
       requestBody:
         content:
           application/json:
@@ -3637,7 +3634,6 @@ paths:
                     - {}
                     - {}
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.invoice_controller
   /batch:
     get:
       tags:
@@ -3670,9 +3666,9 @@ paths:
         \ no Batch Id is provided, the rest provided input criteria will used</li>\n\
         \    <li>The result will be mapped to a list of Batch objects and will be\
         \ returned as the service response<em>.</em></li>\n</ul>"
-      operationId: search_batch
+      operationId: searchBatch
       parameters:
-      - name: Page_Number
+      - name: Page Number
         in: query
         description: Page Number
         required: true
@@ -3681,7 +3677,7 @@ paths:
         schema:
           minimum: 1
           type: integer
-      - name: Page_Size
+      - name: Page Size
         in: query
         description: Page size
         required: true
@@ -3690,7 +3686,7 @@ paths:
         schema:
           minimum: 1
           type: integer
-      - name: Batch_Id
+      - name: Batch Id
         in: query
         description: The batch unique id
         required: true
@@ -3699,7 +3695,7 @@ paths:
         schema:
           maxLength: 8
           type: string
-      - name: External_Batch__Reference_Id
+      - name: External Batch  Reference Id
         in: query
         description: Batch's External Reference Id
         required: true
@@ -3708,7 +3704,7 @@ paths:
         schema:
           maxLength: 6
           type: string
-      - name: Submitted_Type
+      - name: Submitted Type
         in: query
         description: "Indicates whether the entity  is submitted by a Provider or\
           \ Insurance Company\t"
@@ -3718,7 +3714,7 @@ paths:
         schema:
           maxLength: 6
           type: string
-      - name: Submitted_By
+      - name: Submitted By
         in: query
         description: Provider or Insurance Company unique id
         required: true
@@ -3727,7 +3723,7 @@ paths:
         schema:
           maxLength: 7
           type: string
-      - name: Payment_Date
+      - name: Payment Date
         in: query
         description: Payment Date
         required: true
@@ -3736,7 +3732,7 @@ paths:
         schema:
           type: string
           format: date
-      - name: Submission_Method
+      - name: Submission Method
         in: query
         required: true
         style: form
@@ -3747,7 +3743,7 @@ paths:
           - MANUAL
           - ELECTRONIC
           - EMAIL
-      - name: Received_Date
+      - name: Received Date
         in: query
         description: Batch Received Date (DateTime)
         required: true
@@ -3828,7 +3824,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
-      x-openapi-router-controller: swagger_server.controllers.batch_controller
     post:
       tags:
       - Batch
@@ -3876,7 +3871,7 @@ paths:
         \ will not block the actual service response </li>\n\t\t</ul>\n\t</li>\n\t\
         <li>The service will reply with the created Batch object enriched by the new\
         \ batch ID\n\t</li>\n</ul>"
-      operationId: create_batch
+      operationId: createBatch
       requestBody:
         content:
           application/json:
@@ -3951,7 +3946,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.batch_controller
   /invoice/import:
     get:
       tags:
@@ -3982,9 +3976,9 @@ paths:
         \    <li>If no Invoice Import Id is provided, the rest input criteria will\
         \ be used</li>\n    <li>The result will be mapped to a list of Invoice Import\
         \ objects and will be returned as the service response.</li>\n</ul>"
-      operationId: search_invoice_import
+      operationId: searchInvoiceImport
       parameters:
-      - name: Page_Number
+      - name: Page Number
         in: query
         description: Page Number
         required: true
@@ -3993,7 +3987,7 @@ paths:
         schema:
           minimum: 1
           type: integer
-      - name: Page_Size
+      - name: Page Size
         in: query
         description: Page size
         required: true
@@ -4002,7 +3996,7 @@ paths:
         schema:
           minimum: 1
           type: integer
-      - name: Import_Id
+      - name: Import Id
         in: query
         description: The import unique id
         required: true
@@ -4010,7 +4004,7 @@ paths:
         explode: true
         schema:
           type: string
-      - name: Batch_Id
+      - name: Batch Id
         in: query
         description: The batch unique id
         required: true
@@ -4019,7 +4013,7 @@ paths:
         schema:
           maxLength: 8
           type: string
-      - name: Invoice_Id
+      - name: Invoice Id
         in: query
         description: Invoice unique id
         required: true
@@ -4027,7 +4021,7 @@ paths:
         explode: true
         schema:
           type: string
-      - name: External_Reference_Id
+      - name: External Reference Id
         in: query
         description: 'The entity external reference id '
         required: true
@@ -4323,7 +4317,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
-      x-openapi-router-controller: swagger_server.controllers.invoice_import_controller
     post:
       tags:
       - InvoiceImport
@@ -4361,7 +4354,7 @@ paths:
         <ul>
             <li>The service will reply with <em>HTTP 202 - Accepted</em> along with the created Queue Item object enriched by the new queue ID</li>
         </ul>
-      operationId: invoice_import
+      operationId: invoiceImport
       requestBody:
         content:
           application/json:
@@ -4419,7 +4412,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.invoice_import_controller
   /invoice/report:
     get:
       tags:
@@ -4443,9 +4435,9 @@ paths:
         \ to the caller along with an Error Information message</li>\n        </ul>\n\
         \    </li>\n    <li>The result will be returned as the service response<em>.</em></li>\n\
         </ul>"
-      operationId: query_report_run_info_by_id
+      operationId: queryReportRunInfoById
       parameters:
-      - name: Run_Number
+      - name: Run Number
         in: query
         description: Report run number
         required: true
@@ -4508,7 +4500,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
-      x-openapi-router-controller: swagger_server.controllers.invoice_report_controller
     post:
       tags:
       - InvoiceReport
@@ -4543,7 +4534,7 @@ paths:
         <ul>
             <li>The service will reply with <em>HTTP 202 - Accepted</em> along with the created Queue Item object enriched by the new queue ID</li>
         </ul>
-      operationId: report_invoices
+      operationId: reportInvoices
       requestBody:
         content:
           application/json:
@@ -4596,7 +4587,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.invoice_report_controller
   /search:
     post:
       tags:
@@ -4619,7 +4609,7 @@ paths:
         \ to the caller along with an Error Information message.</li>\n        </ul>\n\
         \    </li>\n    <li><strong>Reply: </strong>The service will reply with <em>\
         \ HTTP 200 - OK along with the claim information.</em> </li>\n</ul>\n<ul>"
-      operationId: search_claim
+      operationId: searchClaim
       requestBody:
         content:
           application/json:
@@ -4646,7 +4636,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_400_1'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.claim_controller
   /reopen:
     post:
       tags:
@@ -4679,7 +4668,7 @@ paths:
         \   <li><strong>Reply: </strong>The service will reply with <em> HTTP 202\
         \ - Accepted</em> along with the created  Queue Item object.</li>\n</ul>\n\
         <ul>"
-      operationId: reopen_claim
+      operationId: reopenClaim
       requestBody:
         content:
           application/json:
@@ -4700,7 +4689,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_400_1'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.claim_controller
   /:
     post:
       tags:
@@ -4733,7 +4721,7 @@ paths:
         \t\t\t\t</li>\n\t\t\t</ul>\n    </li>\n    <li><strong>Reply: </strong>The\
         \ service will reply with <em> HTTP 202 - Accepted</em> along with the created\
         \  Queue Item object.</li>\n</ul>\n<ul>\n"
-      operationId: create_details
+      operationId: createDetails
       requestBody:
         content:
           application/json:
@@ -4754,7 +4742,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_400_1'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.claim_controller
     delete:
       tags:
       - Claim
@@ -4784,7 +4771,7 @@ paths:
         \ Information message.\n\t\t\t\t</li>\n\t\t\t</ul>\n    <li><strong>Reply:\
         \ </strong>The service will reply with <em> HTTP 202 - Accepted</em> along\
         \ with the created  Queue Item object.</li>\n</ul>\n<ul>\n"
-      operationId: close_claim
+      operationId: closeClaim
       requestBody:
         content:
           application/json:
@@ -4805,7 +4792,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_400_1'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.claim_controller
   /reserve:
     put:
       tags:
@@ -4873,7 +4859,7 @@ paths:
         \ Date of the reconciliation record. </li>\n\t\t</ul>\n</li>\n<li>Reply: The\
         \ service will reply with <em>HTTP 202 - Accepted</em> along with the created\
         \  Queue Item object</li>\n\t</ul>"
-      operationId: adjust_claim_reserve
+      operationId: adjustClaimReserve
       requestBody:
         content:
           application/json:
@@ -4894,7 +4880,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_400_1'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.claim_controller
     post:
       tags:
       - Claim
@@ -4959,7 +4944,7 @@ paths:
         \ Date of the reconciliation record. </li>\n\t\t</ul>\n</li>\n<li>Reply: The\
         \ service will reply with <em>HTTP 202 - Accepted</em> along with the created\
         \  Queue Item object</li>\n\t</ul>"
-      operationId: create_claim_reserve
+      operationId: createClaimReserve
       requestBody:
         content:
           application/json:
@@ -4980,7 +4965,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_400_1'
       x-codegen-request-body-name: body
-      x-openapi-router-controller: swagger_server.controllers.claim_controller
   /invoicetransaction:
     get:
       tags:
@@ -5008,7 +4992,7 @@ paths:
         </ul>"
       operationId: searchinvoicetransaction
       parameters:
-      - name: Page_Size
+      - name: Page Size
         in: query
         description: Page size
         required: true
@@ -5017,7 +5001,7 @@ paths:
         schema:
           minimum: 1
           type: integer
-      - name: Page_Number
+      - name: Page Number
         in: query
         description: Page Number
         required: true
@@ -5109,7 +5093,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_404'
-      x-openapi-router-controller: swagger_server.controllers.invoice_controller
 components:
   schemas:
     QueryByIdCBMType:
@@ -5174,229 +5157,6 @@ components:
       properties:
         claims:
           $ref: '#/components/schemas/ClaimsResponseType'
-      example:
-        claims:
-          claim:
-          - notifiedPersonName: notifiedPersonName
-            notes:
-              note:
-              - creationUserId: creationUserId
-                noteType:
-                  note: note
-                  noteNbr: 3
-                  noteTypeId: noteTypeId
-                predefinedTextId: predefinedTextId
-                creationDate: 2000-01-23T04:56:07.000+00:00
-              - creationUserId: creationUserId
-                noteType:
-                  note: note
-                  noteNbr: 3
-                  noteTypeId: noteTypeId
-                predefinedTextId: predefinedTextId
-                creationDate: 2000-01-23T04:56:07.000+00:00
-            memberNbr: 0
-            memberExternalReferenceId: memberExternalReferenceId
-            customFields:
-              customField:
-              - fieldNbr: 9
-                customFieldId: customFieldId
-                value: value
-              - fieldNbr: 9
-                customFieldId: customFieldId
-                value: value
-            notifyingEntityId: notifyingEntityId
-            externalReferenceId: externalReferenceId
-            creationUserId: creationUserId
-            notificationMethodId: notificationMethodId
-            invoices:
-              invoiceNbr:
-              - 7
-              - 7
-            notificationTime: 2000-01-23T04:56:07.000+00:00
-            claimNbr: 1
-            incidents:
-              incidentNbr:
-              - 2
-              - 2
-            totalReserveAmount:
-              amount: 6.8468526983526398765889098285697400569915771484375
-              currencyId: currencyId
-            receivedDate: 2000-01-23T04:56:07.000+00:00
-            policyNbr: 6
-            occurenceDate: 2000-01-23T04:56:07.000+00:00
-            packageNbr: 5
-            custom: {}
-            reserves:
-              reserve:
-              - creationUserId: creationUserId
-                reserveTypeId: ADD
-                amount: null
-                modificationDate: 2000-01-23T04:56:07.000+00:00
-                reserveDetails:
-                  reserveDetail:
-                  - amount: null
-                    reserveNbr: 2
-                    levelId: 1
-                    levelValue: 2
-                  - amount: null
-                    reserveNbr: 2
-                    levelId: 1
-                    levelValue: 2
-                comments: comments
-                reserveNbr: 7
-                totalReserveDetailAmount: null
-                custom: null
-                creationDate: 2000-01-23T04:56:07.000+00:00
-                reserveDate: 2000-01-23T04:56:07.000+00:00
-                modificationUserId: modificationUserId
-              - creationUserId: creationUserId
-                reserveTypeId: ADD
-                amount: null
-                modificationDate: 2000-01-23T04:56:07.000+00:00
-                reserveDetails:
-                  reserveDetail:
-                  - amount: null
-                    reserveNbr: 2
-                    levelId: 1
-                    levelValue: 2
-                  - amount: null
-                    reserveNbr: 2
-                    levelId: 1
-                    levelValue: 2
-                comments: comments
-                reserveNbr: 7
-                totalReserveDetailAmount: null
-                custom: null
-                creationDate: 2000-01-23T04:56:07.000+00:00
-                reserveDate: 2000-01-23T04:56:07.000+00:00
-                modificationUserId: modificationUserId
-            creationDate: 2000-01-23T04:56:07.000+00:00
-            policyExternalReferenceId: policyExternalReferenceId
-            historyModifications:
-              historyModification:
-              - date: 2000-01-23T04:56:07.000+00:00
-                note: note
-                statusId: statusId
-                userId: userId
-              - date: 2000-01-23T04:56:07.000+00:00
-                note: note
-                statusId: statusId
-                userId: userId
-            statusId: statusId
-            insuranceCompanyNbr: 5
-            notifiedBy: notifiedBy
-            typeId: typeId
-            notificationDate: 2000-01-23T04:56:07.000+00:00
-          - notifiedPersonName: notifiedPersonName
-            notes:
-              note:
-              - creationUserId: creationUserId
-                noteType:
-                  note: note
-                  noteNbr: 3
-                  noteTypeId: noteTypeId
-                predefinedTextId: predefinedTextId
-                creationDate: 2000-01-23T04:56:07.000+00:00
-              - creationUserId: creationUserId
-                noteType:
-                  note: note
-                  noteNbr: 3
-                  noteTypeId: noteTypeId
-                predefinedTextId: predefinedTextId
-                creationDate: 2000-01-23T04:56:07.000+00:00
-            memberNbr: 0
-            memberExternalReferenceId: memberExternalReferenceId
-            customFields:
-              customField:
-              - fieldNbr: 9
-                customFieldId: customFieldId
-                value: value
-              - fieldNbr: 9
-                customFieldId: customFieldId
-                value: value
-            notifyingEntityId: notifyingEntityId
-            externalReferenceId: externalReferenceId
-            creationUserId: creationUserId
-            notificationMethodId: notificationMethodId
-            invoices:
-              invoiceNbr:
-              - 7
-              - 7
-            notificationTime: 2000-01-23T04:56:07.000+00:00
-            claimNbr: 1
-            incidents:
-              incidentNbr:
-              - 2
-              - 2
-            totalReserveAmount:
-              amount: 6.8468526983526398765889098285697400569915771484375
-              currencyId: currencyId
-            receivedDate: 2000-01-23T04:56:07.000+00:00
-            policyNbr: 6
-            occurenceDate: 2000-01-23T04:56:07.000+00:00
-            packageNbr: 5
-            custom: {}
-            reserves:
-              reserve:
-              - creationUserId: creationUserId
-                reserveTypeId: ADD
-                amount: null
-                modificationDate: 2000-01-23T04:56:07.000+00:00
-                reserveDetails:
-                  reserveDetail:
-                  - amount: null
-                    reserveNbr: 2
-                    levelId: 1
-                    levelValue: 2
-                  - amount: null
-                    reserveNbr: 2
-                    levelId: 1
-                    levelValue: 2
-                comments: comments
-                reserveNbr: 7
-                totalReserveDetailAmount: null
-                custom: null
-                creationDate: 2000-01-23T04:56:07.000+00:00
-                reserveDate: 2000-01-23T04:56:07.000+00:00
-                modificationUserId: modificationUserId
-              - creationUserId: creationUserId
-                reserveTypeId: ADD
-                amount: null
-                modificationDate: 2000-01-23T04:56:07.000+00:00
-                reserveDetails:
-                  reserveDetail:
-                  - amount: null
-                    reserveNbr: 2
-                    levelId: 1
-                    levelValue: 2
-                  - amount: null
-                    reserveNbr: 2
-                    levelId: 1
-                    levelValue: 2
-                comments: comments
-                reserveNbr: 7
-                totalReserveDetailAmount: null
-                custom: null
-                creationDate: 2000-01-23T04:56:07.000+00:00
-                reserveDate: 2000-01-23T04:56:07.000+00:00
-                modificationUserId: modificationUserId
-            creationDate: 2000-01-23T04:56:07.000+00:00
-            policyExternalReferenceId: policyExternalReferenceId
-            historyModifications:
-              historyModification:
-              - date: 2000-01-23T04:56:07.000+00:00
-                note: note
-                statusId: statusId
-                userId: userId
-              - date: 2000-01-23T04:56:07.000+00:00
-                note: note
-                statusId: statusId
-                userId: userId
-            statusId: statusId
-            insuranceCompanyNbr: 5
-            notifiedBy: notifiedBy
-            typeId: typeId
-            notificationDate: 2000-01-23T04:56:07.000+00:00
     ClaimsResponseType:
       required:
       - claim
@@ -5407,228 +5167,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ClaimType'
-      example:
-        claim:
-        - notifiedPersonName: notifiedPersonName
-          notes:
-            note:
-            - creationUserId: creationUserId
-              noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              predefinedTextId: predefinedTextId
-              creationDate: 2000-01-23T04:56:07.000+00:00
-            - creationUserId: creationUserId
-              noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              predefinedTextId: predefinedTextId
-              creationDate: 2000-01-23T04:56:07.000+00:00
-          memberNbr: 0
-          memberExternalReferenceId: memberExternalReferenceId
-          customFields:
-            customField:
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-          notifyingEntityId: notifyingEntityId
-          externalReferenceId: externalReferenceId
-          creationUserId: creationUserId
-          notificationMethodId: notificationMethodId
-          invoices:
-            invoiceNbr:
-            - 7
-            - 7
-          notificationTime: 2000-01-23T04:56:07.000+00:00
-          claimNbr: 1
-          incidents:
-            incidentNbr:
-            - 2
-            - 2
-          totalReserveAmount:
-            amount: 6.8468526983526398765889098285697400569915771484375
-            currencyId: currencyId
-          receivedDate: 2000-01-23T04:56:07.000+00:00
-          policyNbr: 6
-          occurenceDate: 2000-01-23T04:56:07.000+00:00
-          packageNbr: 5
-          custom: {}
-          reserves:
-            reserve:
-            - creationUserId: creationUserId
-              reserveTypeId: ADD
-              amount: null
-              modificationDate: 2000-01-23T04:56:07.000+00:00
-              reserveDetails:
-                reserveDetail:
-                - amount: null
-                  reserveNbr: 2
-                  levelId: 1
-                  levelValue: 2
-                - amount: null
-                  reserveNbr: 2
-                  levelId: 1
-                  levelValue: 2
-              comments: comments
-              reserveNbr: 7
-              totalReserveDetailAmount: null
-              custom: null
-              creationDate: 2000-01-23T04:56:07.000+00:00
-              reserveDate: 2000-01-23T04:56:07.000+00:00
-              modificationUserId: modificationUserId
-            - creationUserId: creationUserId
-              reserveTypeId: ADD
-              amount: null
-              modificationDate: 2000-01-23T04:56:07.000+00:00
-              reserveDetails:
-                reserveDetail:
-                - amount: null
-                  reserveNbr: 2
-                  levelId: 1
-                  levelValue: 2
-                - amount: null
-                  reserveNbr: 2
-                  levelId: 1
-                  levelValue: 2
-              comments: comments
-              reserveNbr: 7
-              totalReserveDetailAmount: null
-              custom: null
-              creationDate: 2000-01-23T04:56:07.000+00:00
-              reserveDate: 2000-01-23T04:56:07.000+00:00
-              modificationUserId: modificationUserId
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          policyExternalReferenceId: policyExternalReferenceId
-          historyModifications:
-            historyModification:
-            - date: 2000-01-23T04:56:07.000+00:00
-              note: note
-              statusId: statusId
-              userId: userId
-            - date: 2000-01-23T04:56:07.000+00:00
-              note: note
-              statusId: statusId
-              userId: userId
-          statusId: statusId
-          insuranceCompanyNbr: 5
-          notifiedBy: notifiedBy
-          typeId: typeId
-          notificationDate: 2000-01-23T04:56:07.000+00:00
-        - notifiedPersonName: notifiedPersonName
-          notes:
-            note:
-            - creationUserId: creationUserId
-              noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              predefinedTextId: predefinedTextId
-              creationDate: 2000-01-23T04:56:07.000+00:00
-            - creationUserId: creationUserId
-              noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              predefinedTextId: predefinedTextId
-              creationDate: 2000-01-23T04:56:07.000+00:00
-          memberNbr: 0
-          memberExternalReferenceId: memberExternalReferenceId
-          customFields:
-            customField:
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-          notifyingEntityId: notifyingEntityId
-          externalReferenceId: externalReferenceId
-          creationUserId: creationUserId
-          notificationMethodId: notificationMethodId
-          invoices:
-            invoiceNbr:
-            - 7
-            - 7
-          notificationTime: 2000-01-23T04:56:07.000+00:00
-          claimNbr: 1
-          incidents:
-            incidentNbr:
-            - 2
-            - 2
-          totalReserveAmount:
-            amount: 6.8468526983526398765889098285697400569915771484375
-            currencyId: currencyId
-          receivedDate: 2000-01-23T04:56:07.000+00:00
-          policyNbr: 6
-          occurenceDate: 2000-01-23T04:56:07.000+00:00
-          packageNbr: 5
-          custom: {}
-          reserves:
-            reserve:
-            - creationUserId: creationUserId
-              reserveTypeId: ADD
-              amount: null
-              modificationDate: 2000-01-23T04:56:07.000+00:00
-              reserveDetails:
-                reserveDetail:
-                - amount: null
-                  reserveNbr: 2
-                  levelId: 1
-                  levelValue: 2
-                - amount: null
-                  reserveNbr: 2
-                  levelId: 1
-                  levelValue: 2
-              comments: comments
-              reserveNbr: 7
-              totalReserveDetailAmount: null
-              custom: null
-              creationDate: 2000-01-23T04:56:07.000+00:00
-              reserveDate: 2000-01-23T04:56:07.000+00:00
-              modificationUserId: modificationUserId
-            - creationUserId: creationUserId
-              reserveTypeId: ADD
-              amount: null
-              modificationDate: 2000-01-23T04:56:07.000+00:00
-              reserveDetails:
-                reserveDetail:
-                - amount: null
-                  reserveNbr: 2
-                  levelId: 1
-                  levelValue: 2
-                - amount: null
-                  reserveNbr: 2
-                  levelId: 1
-                  levelValue: 2
-              comments: comments
-              reserveNbr: 7
-              totalReserveDetailAmount: null
-              custom: null
-              creationDate: 2000-01-23T04:56:07.000+00:00
-              reserveDate: 2000-01-23T04:56:07.000+00:00
-              modificationUserId: modificationUserId
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          policyExternalReferenceId: policyExternalReferenceId
-          historyModifications:
-            historyModification:
-            - date: 2000-01-23T04:56:07.000+00:00
-              note: note
-              statusId: statusId
-              userId: userId
-            - date: 2000-01-23T04:56:07.000+00:00
-              note: note
-              statusId: statusId
-              userId: userId
-          statusId: statusId
-          insuranceCompanyNbr: 5
-          notifiedBy: notifiedBy
-          typeId: typeId
-          notificationDate: 2000-01-23T04:56:07.000+00:00
     CreateClaimCBMType:
       required:
       - claim
@@ -5671,48 +5209,6 @@ components:
       properties:
         queueItem:
           $ref: '#/components/schemas/QueueItemType'
-      example:
-        queueItem:
-          resourceId: resourceId
-          errorDetailList:
-            errorDetail:
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          externalReference: externalReference
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          subItemList:
-            subItem:
-            - null
-            - null
-          queueParentNbr: 6
-          queueNbr: 0
-          resourceVerb: PUT
-          queueItemNbr: 1
-          status: PENDING
     AmountType:
       title: AmountType
       type: object
@@ -5722,9 +5218,6 @@ components:
         currencyId:
           maxLength: 6
           type: string
-      example:
-        amount: 6.8468526983526398765889098285697400569915771484375
-        currencyId: currencyId
     InvoiceLineExchangeRateType:
       title: InvoiceLineExchangeRateType
       type: object
@@ -5740,11 +5233,6 @@ components:
         exchangeDate:
           type: string
           format: date-time
-      example:
-        exchangeDate: 2000-01-23T04:56:07.000+00:00
-        exchangeRate: 7.4577447736837658709418974467553198337554931640625
-        sourceCurrencyId: sourceCurrencyId
-        targetCurrencyId: targetCurrencyId
     AdjustClaimReserveCBMType:
       required:
       - claims
@@ -5759,48 +5247,6 @@ components:
       properties:
         queueItem:
           $ref: '#/components/schemas/QueueItemType'
-      example:
-        queueItem:
-          resourceId: resourceId
-          errorDetailList:
-            errorDetail:
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          externalReference: externalReference
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          subItemList:
-            subItem:
-            - null
-            - null
-          queueParentNbr: 6
-          queueNbr: 0
-          resourceVerb: PUT
-          queueItemNbr: 1
-          status: PENDING
     CloseClaimCBMType:
       required:
       - claims
@@ -5815,48 +5261,6 @@ components:
       properties:
         queueItem:
           $ref: '#/components/schemas/QueueItemType'
-      example:
-        queueItem:
-          resourceId: resourceId
-          errorDetailList:
-            errorDetail:
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          externalReference: externalReference
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          subItemList:
-            subItem:
-            - null
-            - null
-          queueParentNbr: 6
-          queueNbr: 0
-          resourceVerb: PUT
-          queueItemNbr: 1
-          status: PENDING
     ReopenClaimCBMType:
       required:
       - claims
@@ -5871,48 +5275,6 @@ components:
       properties:
         queueItem:
           $ref: '#/components/schemas/QueueItemType'
-      example:
-        queueItem:
-          resourceId: resourceId
-          errorDetailList:
-            errorDetail:
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          externalReference: externalReference
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          subItemList:
-            subItem:
-            - null
-            - null
-          queueParentNbr: 6
-          queueNbr: 0
-          resourceVerb: PUT
-          queueItemNbr: 1
-          status: PENDING
     PerformClaimModifyStatusBPSCBMType:
       required:
       - claimStatusItem
@@ -6008,117 +5370,6 @@ components:
           $ref: '#/components/schemas/ClaimType_historyModifications'
         reserves:
           $ref: '#/components/schemas/ClaimType_reserves'
-      example:
-        notifiedPersonName: notifiedPersonName
-        notes:
-          note:
-          - creationUserId: creationUserId
-            noteType:
-              note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            predefinedTextId: predefinedTextId
-            creationDate: 2000-01-23T04:56:07.000+00:00
-          - creationUserId: creationUserId
-            noteType:
-              note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            predefinedTextId: predefinedTextId
-            creationDate: 2000-01-23T04:56:07.000+00:00
-        memberNbr: 0
-        memberExternalReferenceId: memberExternalReferenceId
-        customFields:
-          customField:
-          - fieldNbr: 9
-            customFieldId: customFieldId
-            value: value
-          - fieldNbr: 9
-            customFieldId: customFieldId
-            value: value
-        notifyingEntityId: notifyingEntityId
-        externalReferenceId: externalReferenceId
-        creationUserId: creationUserId
-        notificationMethodId: notificationMethodId
-        invoices:
-          invoiceNbr:
-          - 7
-          - 7
-        notificationTime: 2000-01-23T04:56:07.000+00:00
-        claimNbr: 1
-        incidents:
-          incidentNbr:
-          - 2
-          - 2
-        totalReserveAmount:
-          amount: 6.8468526983526398765889098285697400569915771484375
-          currencyId: currencyId
-        receivedDate: 2000-01-23T04:56:07.000+00:00
-        policyNbr: 6
-        occurenceDate: 2000-01-23T04:56:07.000+00:00
-        packageNbr: 5
-        custom: {}
-        reserves:
-          reserve:
-          - creationUserId: creationUserId
-            reserveTypeId: ADD
-            amount: null
-            modificationDate: 2000-01-23T04:56:07.000+00:00
-            reserveDetails:
-              reserveDetail:
-              - amount: null
-                reserveNbr: 2
-                levelId: 1
-                levelValue: 2
-              - amount: null
-                reserveNbr: 2
-                levelId: 1
-                levelValue: 2
-            comments: comments
-            reserveNbr: 7
-            totalReserveDetailAmount: null
-            custom: null
-            creationDate: 2000-01-23T04:56:07.000+00:00
-            reserveDate: 2000-01-23T04:56:07.000+00:00
-            modificationUserId: modificationUserId
-          - creationUserId: creationUserId
-            reserveTypeId: ADD
-            amount: null
-            modificationDate: 2000-01-23T04:56:07.000+00:00
-            reserveDetails:
-              reserveDetail:
-              - amount: null
-                reserveNbr: 2
-                levelId: 1
-                levelValue: 2
-              - amount: null
-                reserveNbr: 2
-                levelId: 1
-                levelValue: 2
-            comments: comments
-            reserveNbr: 7
-            totalReserveDetailAmount: null
-            custom: null
-            creationDate: 2000-01-23T04:56:07.000+00:00
-            reserveDate: 2000-01-23T04:56:07.000+00:00
-            modificationUserId: modificationUserId
-        creationDate: 2000-01-23T04:56:07.000+00:00
-        policyExternalReferenceId: policyExternalReferenceId
-        historyModifications:
-          historyModification:
-          - date: 2000-01-23T04:56:07.000+00:00
-            note: note
-            statusId: statusId
-            userId: userId
-          - date: 2000-01-23T04:56:07.000+00:00
-            note: note
-            statusId: statusId
-            userId: userId
-        statusId: statusId
-        insuranceCompanyNbr: 5
-        notifiedBy: notifiedBy
-        typeId: typeId
-        notificationDate: 2000-01-23T04:56:07.000+00:00
     ClaimNoteType:
       type: object
       properties:
@@ -6133,14 +5384,6 @@ components:
         creationUserId:
           maxLength: 300
           type: string
-      example:
-        creationUserId: creationUserId
-        noteType:
-          note: note
-          noteNbr: 3
-          noteTypeId: noteTypeId
-        predefinedTextId: predefinedTextId
-        creationDate: 2000-01-23T04:56:07.000+00:00
     HistoryModificationType:
       type: object
       properties:
@@ -6156,11 +5399,6 @@ components:
         userId:
           maxLength: 300
           type: string
-      example:
-        date: 2000-01-23T04:56:07.000+00:00
-        note: note
-        statusId: statusId
-        userId: userId
     ClaimReserveItemInfoType:
       required:
       - reserveTypeId
@@ -6197,28 +5435,6 @@ components:
           $ref: '#/components/schemas/ClaimReserveItemInfoType_reserveDetails'
         custom:
           $ref: '#/components/schemas/ClaimCustomType'
-      example:
-        creationUserId: creationUserId
-        reserveTypeId: ADD
-        amount: null
-        modificationDate: 2000-01-23T04:56:07.000+00:00
-        reserveDetails:
-          reserveDetail:
-          - amount: null
-            reserveNbr: 2
-            levelId: 1
-            levelValue: 2
-          - amount: null
-            reserveNbr: 2
-            levelId: 1
-            levelValue: 2
-        comments: comments
-        reserveNbr: 7
-        totalReserveDetailAmount: null
-        custom: null
-        creationDate: 2000-01-23T04:56:07.000+00:00
-        reserveDate: 2000-01-23T04:56:07.000+00:00
-        modificationUserId: modificationUserId
     ReserveDetailType:
       required:
       - amount
@@ -6236,11 +5452,6 @@ components:
           type: integer
         amount:
           $ref: '#/components/schemas/AmountType'
-      example:
-        amount: null
-        reserveNbr: 2
-        levelId: 1
-        levelValue: 2
     ClaimStatusItemType:
       required:
       - claims
@@ -6383,12 +5594,6 @@ components:
           $ref: '#/components/schemas/NoteType'
         redefinedTextId:
           type: string
-      example:
-        noteType:
-          note: note
-          noteNbr: 3
-          noteTypeId: noteTypeId
-        redefinedTextId: redefinedTextId
     BatchType:
       required:
       - externalBatchRefId
@@ -6434,34 +5639,6 @@ components:
           $ref: '#/components/schemas/BatchType_notes'
         custom:
           $ref: '#/components/schemas/BatchCustomType'
-      example:
-        batchNbr: 0
-        notes:
-          note:
-          - noteType:
-              note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            redefinedTextId: redefinedTextId
-          - noteType:
-              note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            redefinedTextId: redefinedTextId
-        custom: {}
-        submittedById: submittedById
-        batchAmount:
-          amount: 6.8468526983526398765889098285697400569915771484375
-          currencyId: currencyId
-        creationDate: 2000-01-23T04:56:07.000+00:00
-        submissionMethod: EMAIL
-        creationUserId: creationUserId
-        numberOfInvoices: 6
-        externalBatchRefId: externalBatchRefId
-        statusId: statusId
-        submitterTypeId: submitterTypeId
-        paymentDate: 2000-01-23T04:56:07.000+00:00
-        receivedDate: 2000-01-23T04:56:07.000+00:00
     BatchCustomType:
       type: object
     CreateInvoiceCBMType:
@@ -6486,386 +5663,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceType'
-      example:
-        invoice:
-        - auditId: auditId
-          submissionMethodId: submissionMethodId
-          serviceProviderId: serviceProviderId
-          notes:
-            note:
-            - note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            - note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-          memberNbr: 6
-          invoiceTypeId: invoiceTypeId
-          externalReferenceId: externalReferenceId
-          creationUserId: creationUserId
-          invoiceLines:
-            invoiceLine:
-            - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-              notes: null
-              customFields: null
-              custom: {}
-              claimedQuantityTypeId: claimedQuantityTypeId
-              approvedQuantityTypeId: approvedQuantityTypeId
-              exchangeRates:
-                exchangeRate:
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-              procedureId: procedureId
-              procedureTypeId: procedureTypeId
-              approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-              externalReferenceId: externalReferenceId
-              placeOfServiceId: placeOfServiceId
-              salesEntityNbr: 1
-              classId: classId
-              amounts:
-                amount:
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-              providerId: providerId
-              serviceNbr: 1
-              dateOfService: 2000-01-23T04:56:07.000+00:00
-              invoiceLineNbr: 2
-              authorisationNbr: 7
-            - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-              notes: null
-              customFields: null
-              custom: {}
-              claimedQuantityTypeId: claimedQuantityTypeId
-              approvedQuantityTypeId: approvedQuantityTypeId
-              exchangeRates:
-                exchangeRate:
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-              procedureId: procedureId
-              procedureTypeId: procedureTypeId
-              approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-              externalReferenceId: externalReferenceId
-              placeOfServiceId: placeOfServiceId
-              salesEntityNbr: 1
-              classId: classId
-              amounts:
-                amount:
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-              providerId: providerId
-              serviceNbr: 1
-              dateOfService: 2000-01-23T04:56:07.000+00:00
-              invoiceLineNbr: 2
-              authorisationNbr: 7
-          claimNbr: 2
-          billingProviderId: billingProviderId
-          receivedDate: 2000-01-23T04:56:07.000+00:00
-          policyNbr: 1
-          batchNbr: 5
-          invoiceStatusId: invoiceStatusId
-          invoiceNbr: 0
-          invoiceTypeInfo:
-            professionalInfo:
-              claimFrequencyTypeId: claimFrequencyTypeId
-              prescriptionDate: 2000-01-23T04:56:07.000+00:00
-              referralDate: 2000-01-23T04:56:07.000+00:00
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-            allowanceInfo:
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-            institutionalInfo:
-              claimFrequencyTypeId: claimFrequencyTypeId
-              placeOfServiceId: placeOfServiceId
-              serviceDateFrom: 2000-01-23T04:56:07.000+00:00
-              countryOfTreatmentId: countryOfTreatmentId
-              serviceDateTo: 2000-01-23T04:56:07.000+00:00
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-          custom: {}
-          exchangeRates:
-            exchangeRate:
-            - exchangeRateNbr: exchangeRateNbr
-              exchangeRate: 7.061401241503109105224211816675961017608642578125
-              currencyId: currencyId
-            - exchangeRateNbr: exchangeRateNbr
-              exchangeRate: 7.061401241503109105224211816675961017608642578125
-              currencyId: currencyId
-          invoiceCurrencyId: invoiceCurrencyId
-          payToId: payToId
-          paymentCurrencyId: paymentCurrencyId
-          payToEntityTypeId: payToEntityTypeId
-          insuranceCompanyNbr: 5
-          productCurrencyId: productCurrencyId
-          submitterTypeId: submitterTypeId
-          invoiceCustomFields:
-            customField:
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-          incident:
-            policyNbr: 5
-            IncidentTypeInfo:
-              hospitalisationInfo:
-                dischargeTime: dischargeTime
-                admissionDate: 2000-01-23
-                admissionTypeId: admissionTypeId
-                dischargeDate: 2000-01-23
-                admissionTime: admissionTime
-                admissionSourceId: admissionSourceId
-                incidentClassId: incidentClassId
-                estimatedLengthOfStay: 9
-              outpatientInfo:
-                perscriptionDate: 2000-01-23T04:56:07.000+00:00
-            memberNbr: 4
-            incidentCategoryId: INPATIENT
-            incidentNbr: 1
-            providerId: providerId
-            custom: {}
-            incidentStatusId: incidentStatusId
-            diagnoses:
-              diagnosis:
-              - diagnosisNbr: 9
-                notes: null
-                diagnosisTypeId: diagnosisTypeId
-                diagnosisId: diagnosisId
-                diagnosisDate: 2000-01-23T04:56:07.000+00:00
-                diagnosisQualifierId: diagnosisQualifierId
-                incidentDiagnosisCustomFields: null
-              - diagnosisNbr: 9
-                notes: null
-                diagnosisTypeId: diagnosisTypeId
-                diagnosisId: diagnosisId
-                diagnosisDate: 2000-01-23T04:56:07.000+00:00
-                diagnosisQualifierId: diagnosisQualifierId
-                incidentDiagnosisCustomFields: null
-            case:
-              caseStatusId: caseStatusId
-              caseCategoryId: caseCategoryId
-              memberNbr: 8
-              custom: {}
-              caseNbr: 6
-        - auditId: auditId
-          submissionMethodId: submissionMethodId
-          serviceProviderId: serviceProviderId
-          notes:
-            note:
-            - note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            - note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-          memberNbr: 6
-          invoiceTypeId: invoiceTypeId
-          externalReferenceId: externalReferenceId
-          creationUserId: creationUserId
-          invoiceLines:
-            invoiceLine:
-            - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-              notes: null
-              customFields: null
-              custom: {}
-              claimedQuantityTypeId: claimedQuantityTypeId
-              approvedQuantityTypeId: approvedQuantityTypeId
-              exchangeRates:
-                exchangeRate:
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-              procedureId: procedureId
-              procedureTypeId: procedureTypeId
-              approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-              externalReferenceId: externalReferenceId
-              placeOfServiceId: placeOfServiceId
-              salesEntityNbr: 1
-              classId: classId
-              amounts:
-                amount:
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-              providerId: providerId
-              serviceNbr: 1
-              dateOfService: 2000-01-23T04:56:07.000+00:00
-              invoiceLineNbr: 2
-              authorisationNbr: 7
-            - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-              notes: null
-              customFields: null
-              custom: {}
-              claimedQuantityTypeId: claimedQuantityTypeId
-              approvedQuantityTypeId: approvedQuantityTypeId
-              exchangeRates:
-                exchangeRate:
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-              procedureId: procedureId
-              procedureTypeId: procedureTypeId
-              approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-              externalReferenceId: externalReferenceId
-              placeOfServiceId: placeOfServiceId
-              salesEntityNbr: 1
-              classId: classId
-              amounts:
-                amount:
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-              providerId: providerId
-              serviceNbr: 1
-              dateOfService: 2000-01-23T04:56:07.000+00:00
-              invoiceLineNbr: 2
-              authorisationNbr: 7
-          claimNbr: 2
-          billingProviderId: billingProviderId
-          receivedDate: 2000-01-23T04:56:07.000+00:00
-          policyNbr: 1
-          batchNbr: 5
-          invoiceStatusId: invoiceStatusId
-          invoiceNbr: 0
-          invoiceTypeInfo:
-            professionalInfo:
-              claimFrequencyTypeId: claimFrequencyTypeId
-              prescriptionDate: 2000-01-23T04:56:07.000+00:00
-              referralDate: 2000-01-23T04:56:07.000+00:00
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-            allowanceInfo:
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-            institutionalInfo:
-              claimFrequencyTypeId: claimFrequencyTypeId
-              placeOfServiceId: placeOfServiceId
-              serviceDateFrom: 2000-01-23T04:56:07.000+00:00
-              countryOfTreatmentId: countryOfTreatmentId
-              serviceDateTo: 2000-01-23T04:56:07.000+00:00
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-          custom: {}
-          exchangeRates:
-            exchangeRate:
-            - exchangeRateNbr: exchangeRateNbr
-              exchangeRate: 7.061401241503109105224211816675961017608642578125
-              currencyId: currencyId
-            - exchangeRateNbr: exchangeRateNbr
-              exchangeRate: 7.061401241503109105224211816675961017608642578125
-              currencyId: currencyId
-          invoiceCurrencyId: invoiceCurrencyId
-          payToId: payToId
-          paymentCurrencyId: paymentCurrencyId
-          payToEntityTypeId: payToEntityTypeId
-          insuranceCompanyNbr: 5
-          productCurrencyId: productCurrencyId
-          submitterTypeId: submitterTypeId
-          invoiceCustomFields:
-            customField:
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-          incident:
-            policyNbr: 5
-            IncidentTypeInfo:
-              hospitalisationInfo:
-                dischargeTime: dischargeTime
-                admissionDate: 2000-01-23
-                admissionTypeId: admissionTypeId
-                dischargeDate: 2000-01-23
-                admissionTime: admissionTime
-                admissionSourceId: admissionSourceId
-                incidentClassId: incidentClassId
-                estimatedLengthOfStay: 9
-              outpatientInfo:
-                perscriptionDate: 2000-01-23T04:56:07.000+00:00
-            memberNbr: 4
-            incidentCategoryId: INPATIENT
-            incidentNbr: 1
-            providerId: providerId
-            custom: {}
-            incidentStatusId: incidentStatusId
-            diagnoses:
-              diagnosis:
-              - diagnosisNbr: 9
-                notes: null
-                diagnosisTypeId: diagnosisTypeId
-                diagnosisId: diagnosisId
-                diagnosisDate: 2000-01-23T04:56:07.000+00:00
-                diagnosisQualifierId: diagnosisQualifierId
-                incidentDiagnosisCustomFields: null
-              - diagnosisNbr: 9
-                notes: null
-                diagnosisTypeId: diagnosisTypeId
-                diagnosisId: diagnosisId
-                diagnosisDate: 2000-01-23T04:56:07.000+00:00
-                diagnosisQualifierId: diagnosisQualifierId
-                incidentDiagnosisCustomFields: null
-            case:
-              caseStatusId: caseStatusId
-              caseCategoryId: caseCategoryId
-              memberNbr: 8
-              custom: {}
-              caseNbr: 6
     SearchInvoiceCBMType:
       required:
       - searchCriteria
@@ -6881,386 +5678,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceType'
-      example:
-        invoice:
-        - auditId: auditId
-          submissionMethodId: submissionMethodId
-          serviceProviderId: serviceProviderId
-          notes:
-            note:
-            - note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            - note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-          memberNbr: 6
-          invoiceTypeId: invoiceTypeId
-          externalReferenceId: externalReferenceId
-          creationUserId: creationUserId
-          invoiceLines:
-            invoiceLine:
-            - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-              notes: null
-              customFields: null
-              custom: {}
-              claimedQuantityTypeId: claimedQuantityTypeId
-              approvedQuantityTypeId: approvedQuantityTypeId
-              exchangeRates:
-                exchangeRate:
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-              procedureId: procedureId
-              procedureTypeId: procedureTypeId
-              approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-              externalReferenceId: externalReferenceId
-              placeOfServiceId: placeOfServiceId
-              salesEntityNbr: 1
-              classId: classId
-              amounts:
-                amount:
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-              providerId: providerId
-              serviceNbr: 1
-              dateOfService: 2000-01-23T04:56:07.000+00:00
-              invoiceLineNbr: 2
-              authorisationNbr: 7
-            - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-              notes: null
-              customFields: null
-              custom: {}
-              claimedQuantityTypeId: claimedQuantityTypeId
-              approvedQuantityTypeId: approvedQuantityTypeId
-              exchangeRates:
-                exchangeRate:
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-              procedureId: procedureId
-              procedureTypeId: procedureTypeId
-              approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-              externalReferenceId: externalReferenceId
-              placeOfServiceId: placeOfServiceId
-              salesEntityNbr: 1
-              classId: classId
-              amounts:
-                amount:
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-              providerId: providerId
-              serviceNbr: 1
-              dateOfService: 2000-01-23T04:56:07.000+00:00
-              invoiceLineNbr: 2
-              authorisationNbr: 7
-          claimNbr: 2
-          billingProviderId: billingProviderId
-          receivedDate: 2000-01-23T04:56:07.000+00:00
-          policyNbr: 1
-          batchNbr: 5
-          invoiceStatusId: invoiceStatusId
-          invoiceNbr: 0
-          invoiceTypeInfo:
-            professionalInfo:
-              claimFrequencyTypeId: claimFrequencyTypeId
-              prescriptionDate: 2000-01-23T04:56:07.000+00:00
-              referralDate: 2000-01-23T04:56:07.000+00:00
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-            allowanceInfo:
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-            institutionalInfo:
-              claimFrequencyTypeId: claimFrequencyTypeId
-              placeOfServiceId: placeOfServiceId
-              serviceDateFrom: 2000-01-23T04:56:07.000+00:00
-              countryOfTreatmentId: countryOfTreatmentId
-              serviceDateTo: 2000-01-23T04:56:07.000+00:00
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-          custom: {}
-          exchangeRates:
-            exchangeRate:
-            - exchangeRateNbr: exchangeRateNbr
-              exchangeRate: 7.061401241503109105224211816675961017608642578125
-              currencyId: currencyId
-            - exchangeRateNbr: exchangeRateNbr
-              exchangeRate: 7.061401241503109105224211816675961017608642578125
-              currencyId: currencyId
-          invoiceCurrencyId: invoiceCurrencyId
-          payToId: payToId
-          paymentCurrencyId: paymentCurrencyId
-          payToEntityTypeId: payToEntityTypeId
-          insuranceCompanyNbr: 5
-          productCurrencyId: productCurrencyId
-          submitterTypeId: submitterTypeId
-          invoiceCustomFields:
-            customField:
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-          incident:
-            policyNbr: 5
-            IncidentTypeInfo:
-              hospitalisationInfo:
-                dischargeTime: dischargeTime
-                admissionDate: 2000-01-23
-                admissionTypeId: admissionTypeId
-                dischargeDate: 2000-01-23
-                admissionTime: admissionTime
-                admissionSourceId: admissionSourceId
-                incidentClassId: incidentClassId
-                estimatedLengthOfStay: 9
-              outpatientInfo:
-                perscriptionDate: 2000-01-23T04:56:07.000+00:00
-            memberNbr: 4
-            incidentCategoryId: INPATIENT
-            incidentNbr: 1
-            providerId: providerId
-            custom: {}
-            incidentStatusId: incidentStatusId
-            diagnoses:
-              diagnosis:
-              - diagnosisNbr: 9
-                notes: null
-                diagnosisTypeId: diagnosisTypeId
-                diagnosisId: diagnosisId
-                diagnosisDate: 2000-01-23T04:56:07.000+00:00
-                diagnosisQualifierId: diagnosisQualifierId
-                incidentDiagnosisCustomFields: null
-              - diagnosisNbr: 9
-                notes: null
-                diagnosisTypeId: diagnosisTypeId
-                diagnosisId: diagnosisId
-                diagnosisDate: 2000-01-23T04:56:07.000+00:00
-                diagnosisQualifierId: diagnosisQualifierId
-                incidentDiagnosisCustomFields: null
-            case:
-              caseStatusId: caseStatusId
-              caseCategoryId: caseCategoryId
-              memberNbr: 8
-              custom: {}
-              caseNbr: 6
-        - auditId: auditId
-          submissionMethodId: submissionMethodId
-          serviceProviderId: serviceProviderId
-          notes:
-            note:
-            - note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            - note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-          memberNbr: 6
-          invoiceTypeId: invoiceTypeId
-          externalReferenceId: externalReferenceId
-          creationUserId: creationUserId
-          invoiceLines:
-            invoiceLine:
-            - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-              notes: null
-              customFields: null
-              custom: {}
-              claimedQuantityTypeId: claimedQuantityTypeId
-              approvedQuantityTypeId: approvedQuantityTypeId
-              exchangeRates:
-                exchangeRate:
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-              procedureId: procedureId
-              procedureTypeId: procedureTypeId
-              approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-              externalReferenceId: externalReferenceId
-              placeOfServiceId: placeOfServiceId
-              salesEntityNbr: 1
-              classId: classId
-              amounts:
-                amount:
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-              providerId: providerId
-              serviceNbr: 1
-              dateOfService: 2000-01-23T04:56:07.000+00:00
-              invoiceLineNbr: 2
-              authorisationNbr: 7
-            - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-              notes: null
-              customFields: null
-              custom: {}
-              claimedQuantityTypeId: claimedQuantityTypeId
-              approvedQuantityTypeId: approvedQuantityTypeId
-              exchangeRates:
-                exchangeRate:
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-                - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                  exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                  sourceCurrencyId: sourceCurrencyId
-                  targetCurrencyId: targetCurrencyId
-              procedureId: procedureId
-              procedureTypeId: procedureTypeId
-              approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-              externalReferenceId: externalReferenceId
-              placeOfServiceId: placeOfServiceId
-              salesEntityNbr: 1
-              classId: classId
-              amounts:
-                amount:
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-                - productAmount: null
-                  amountId: amountId
-                  invoiceAmount:
-                    amount: 6.8468526983526398765889098285697400569915771484375
-                    currencyId: currencyId
-                  paymentAmount: null
-              providerId: providerId
-              serviceNbr: 1
-              dateOfService: 2000-01-23T04:56:07.000+00:00
-              invoiceLineNbr: 2
-              authorisationNbr: 7
-          claimNbr: 2
-          billingProviderId: billingProviderId
-          receivedDate: 2000-01-23T04:56:07.000+00:00
-          policyNbr: 1
-          batchNbr: 5
-          invoiceStatusId: invoiceStatusId
-          invoiceNbr: 0
-          invoiceTypeInfo:
-            professionalInfo:
-              claimFrequencyTypeId: claimFrequencyTypeId
-              prescriptionDate: 2000-01-23T04:56:07.000+00:00
-              referralDate: 2000-01-23T04:56:07.000+00:00
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-            allowanceInfo:
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-            institutionalInfo:
-              claimFrequencyTypeId: claimFrequencyTypeId
-              placeOfServiceId: placeOfServiceId
-              serviceDateFrom: 2000-01-23T04:56:07.000+00:00
-              countryOfTreatmentId: countryOfTreatmentId
-              serviceDateTo: 2000-01-23T04:56:07.000+00:00
-              invoiceDate: 2000-01-23T04:56:07.000+00:00
-          custom: {}
-          exchangeRates:
-            exchangeRate:
-            - exchangeRateNbr: exchangeRateNbr
-              exchangeRate: 7.061401241503109105224211816675961017608642578125
-              currencyId: currencyId
-            - exchangeRateNbr: exchangeRateNbr
-              exchangeRate: 7.061401241503109105224211816675961017608642578125
-              currencyId: currencyId
-          invoiceCurrencyId: invoiceCurrencyId
-          payToId: payToId
-          paymentCurrencyId: paymentCurrencyId
-          payToEntityTypeId: payToEntityTypeId
-          insuranceCompanyNbr: 5
-          productCurrencyId: productCurrencyId
-          submitterTypeId: submitterTypeId
-          invoiceCustomFields:
-            customField:
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-            - fieldNbr: 9
-              customFieldId: customFieldId
-              value: value
-          incident:
-            policyNbr: 5
-            IncidentTypeInfo:
-              hospitalisationInfo:
-                dischargeTime: dischargeTime
-                admissionDate: 2000-01-23
-                admissionTypeId: admissionTypeId
-                dischargeDate: 2000-01-23
-                admissionTime: admissionTime
-                admissionSourceId: admissionSourceId
-                incidentClassId: incidentClassId
-                estimatedLengthOfStay: 9
-              outpatientInfo:
-                perscriptionDate: 2000-01-23T04:56:07.000+00:00
-            memberNbr: 4
-            incidentCategoryId: INPATIENT
-            incidentNbr: 1
-            providerId: providerId
-            custom: {}
-            incidentStatusId: incidentStatusId
-            diagnoses:
-              diagnosis:
-              - diagnosisNbr: 9
-                notes: null
-                diagnosisTypeId: diagnosisTypeId
-                diagnosisId: diagnosisId
-                diagnosisDate: 2000-01-23T04:56:07.000+00:00
-                diagnosisQualifierId: diagnosisQualifierId
-                incidentDiagnosisCustomFields: null
-              - diagnosisNbr: 9
-                notes: null
-                diagnosisTypeId: diagnosisTypeId
-                diagnosisId: diagnosisId
-                diagnosisDate: 2000-01-23T04:56:07.000+00:00
-                diagnosisQualifierId: diagnosisQualifierId
-                incidentDiagnosisCustomFields: null
-            case:
-              caseStatusId: caseStatusId
-              caseCategoryId: caseCategoryId
-              memberNbr: 8
-              custom: {}
-              caseNbr: 6
     SearchInvoiceDataAreaType:
       type: object
       properties:
@@ -7292,13 +5709,6 @@ components:
           $ref: '#/components/schemas/AmountType'
         productAmount:
           $ref: '#/components/schemas/AmountType'
-      example:
-        productAmount: null
-        amountId: amountId
-        invoiceAmount:
-          amount: 6.8468526983526398765889098285697400569915771484375
-          currencyId: currencyId
-        paymentAmount: null
     InstitutionalInfoType:
       required:
       - invoiceDate
@@ -7322,13 +5732,6 @@ components:
         countryOfTreatmentId:
           maxLength: 6
           type: string
-      example:
-        claimFrequencyTypeId: claimFrequencyTypeId
-        placeOfServiceId: placeOfServiceId
-        serviceDateFrom: 2000-01-23T04:56:07.000+00:00
-        countryOfTreatmentId: countryOfTreatmentId
-        serviceDateTo: 2000-01-23T04:56:07.000+00:00
-        invoiceDate: 2000-01-23T04:56:07.000+00:00
     ProfessionalInfoType:
       required:
       - invoiceDate
@@ -7346,19 +5749,12 @@ components:
         claimFrequencyTypeId:
           maxLength: 6
           type: string
-      example:
-        claimFrequencyTypeId: claimFrequencyTypeId
-        prescriptionDate: 2000-01-23T04:56:07.000+00:00
-        referralDate: 2000-01-23T04:56:07.000+00:00
-        invoiceDate: 2000-01-23T04:56:07.000+00:00
     AllowanceInfoType:
       type: object
       properties:
         invoiceDate:
           type: string
           format: date-time
-      example:
-        invoiceDate: 2000-01-23T04:56:07.000+00:00
     InvoiceType:
       required:
       - auditId
@@ -7437,196 +5833,6 @@ components:
           $ref: '#/components/schemas/IncidentInfoType'
         custom:
           $ref: '#/components/schemas/InvoiceCustomType'
-      example:
-        auditId: auditId
-        submissionMethodId: submissionMethodId
-        serviceProviderId: serviceProviderId
-        notes:
-          note:
-          - note: note
-            noteNbr: 3
-            noteTypeId: noteTypeId
-          - note: note
-            noteNbr: 3
-            noteTypeId: noteTypeId
-        memberNbr: 6
-        invoiceTypeId: invoiceTypeId
-        externalReferenceId: externalReferenceId
-        creationUserId: creationUserId
-        invoiceLines:
-          invoiceLine:
-          - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-            notes: null
-            customFields: null
-            custom: {}
-            claimedQuantityTypeId: claimedQuantityTypeId
-            approvedQuantityTypeId: approvedQuantityTypeId
-            exchangeRates:
-              exchangeRate:
-              - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                sourceCurrencyId: sourceCurrencyId
-                targetCurrencyId: targetCurrencyId
-              - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                sourceCurrencyId: sourceCurrencyId
-                targetCurrencyId: targetCurrencyId
-            procedureId: procedureId
-            procedureTypeId: procedureTypeId
-            approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-            externalReferenceId: externalReferenceId
-            placeOfServiceId: placeOfServiceId
-            salesEntityNbr: 1
-            classId: classId
-            amounts:
-              amount:
-              - productAmount: null
-                amountId: amountId
-                invoiceAmount:
-                  amount: 6.8468526983526398765889098285697400569915771484375
-                  currencyId: currencyId
-                paymentAmount: null
-              - productAmount: null
-                amountId: amountId
-                invoiceAmount:
-                  amount: 6.8468526983526398765889098285697400569915771484375
-                  currencyId: currencyId
-                paymentAmount: null
-            providerId: providerId
-            serviceNbr: 1
-            dateOfService: 2000-01-23T04:56:07.000+00:00
-            invoiceLineNbr: 2
-            authorisationNbr: 7
-          - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-            notes: null
-            customFields: null
-            custom: {}
-            claimedQuantityTypeId: claimedQuantityTypeId
-            approvedQuantityTypeId: approvedQuantityTypeId
-            exchangeRates:
-              exchangeRate:
-              - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                sourceCurrencyId: sourceCurrencyId
-                targetCurrencyId: targetCurrencyId
-              - exchangeDate: 2000-01-23T04:56:07.000+00:00
-                exchangeRate: 7.4577447736837658709418974467553198337554931640625
-                sourceCurrencyId: sourceCurrencyId
-                targetCurrencyId: targetCurrencyId
-            procedureId: procedureId
-            procedureTypeId: procedureTypeId
-            approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-            externalReferenceId: externalReferenceId
-            placeOfServiceId: placeOfServiceId
-            salesEntityNbr: 1
-            classId: classId
-            amounts:
-              amount:
-              - productAmount: null
-                amountId: amountId
-                invoiceAmount:
-                  amount: 6.8468526983526398765889098285697400569915771484375
-                  currencyId: currencyId
-                paymentAmount: null
-              - productAmount: null
-                amountId: amountId
-                invoiceAmount:
-                  amount: 6.8468526983526398765889098285697400569915771484375
-                  currencyId: currencyId
-                paymentAmount: null
-            providerId: providerId
-            serviceNbr: 1
-            dateOfService: 2000-01-23T04:56:07.000+00:00
-            invoiceLineNbr: 2
-            authorisationNbr: 7
-        claimNbr: 2
-        billingProviderId: billingProviderId
-        receivedDate: 2000-01-23T04:56:07.000+00:00
-        policyNbr: 1
-        batchNbr: 5
-        invoiceStatusId: invoiceStatusId
-        invoiceNbr: 0
-        invoiceTypeInfo:
-          professionalInfo:
-            claimFrequencyTypeId: claimFrequencyTypeId
-            prescriptionDate: 2000-01-23T04:56:07.000+00:00
-            referralDate: 2000-01-23T04:56:07.000+00:00
-            invoiceDate: 2000-01-23T04:56:07.000+00:00
-          allowanceInfo:
-            invoiceDate: 2000-01-23T04:56:07.000+00:00
-          institutionalInfo:
-            claimFrequencyTypeId: claimFrequencyTypeId
-            placeOfServiceId: placeOfServiceId
-            serviceDateFrom: 2000-01-23T04:56:07.000+00:00
-            countryOfTreatmentId: countryOfTreatmentId
-            serviceDateTo: 2000-01-23T04:56:07.000+00:00
-            invoiceDate: 2000-01-23T04:56:07.000+00:00
-        custom: {}
-        exchangeRates:
-          exchangeRate:
-          - exchangeRateNbr: exchangeRateNbr
-            exchangeRate: 7.061401241503109105224211816675961017608642578125
-            currencyId: currencyId
-          - exchangeRateNbr: exchangeRateNbr
-            exchangeRate: 7.061401241503109105224211816675961017608642578125
-            currencyId: currencyId
-        invoiceCurrencyId: invoiceCurrencyId
-        payToId: payToId
-        paymentCurrencyId: paymentCurrencyId
-        payToEntityTypeId: payToEntityTypeId
-        insuranceCompanyNbr: 5
-        productCurrencyId: productCurrencyId
-        submitterTypeId: submitterTypeId
-        invoiceCustomFields:
-          customField:
-          - fieldNbr: 9
-            customFieldId: customFieldId
-            value: value
-          - fieldNbr: 9
-            customFieldId: customFieldId
-            value: value
-        incident:
-          policyNbr: 5
-          IncidentTypeInfo:
-            hospitalisationInfo:
-              dischargeTime: dischargeTime
-              admissionDate: 2000-01-23
-              admissionTypeId: admissionTypeId
-              dischargeDate: 2000-01-23
-              admissionTime: admissionTime
-              admissionSourceId: admissionSourceId
-              incidentClassId: incidentClassId
-              estimatedLengthOfStay: 9
-            outpatientInfo:
-              perscriptionDate: 2000-01-23T04:56:07.000+00:00
-          memberNbr: 4
-          incidentCategoryId: INPATIENT
-          incidentNbr: 1
-          providerId: providerId
-          custom: {}
-          incidentStatusId: incidentStatusId
-          diagnoses:
-            diagnosis:
-            - diagnosisNbr: 9
-              notes: null
-              diagnosisTypeId: diagnosisTypeId
-              diagnosisId: diagnosisId
-              diagnosisDate: 2000-01-23T04:56:07.000+00:00
-              diagnosisQualifierId: diagnosisQualifierId
-              incidentDiagnosisCustomFields: null
-            - diagnosisNbr: 9
-              notes: null
-              diagnosisTypeId: diagnosisTypeId
-              diagnosisId: diagnosisId
-              diagnosisDate: 2000-01-23T04:56:07.000+00:00
-              diagnosisQualifierId: diagnosisQualifierId
-              incidentDiagnosisCustomFields: null
-          case:
-            caseStatusId: caseStatusId
-            caseCategoryId: caseCategoryId
-            memberNbr: 8
-            custom: {}
-            caseNbr: 6
     InvoiceCustomType:
       type: object
     InvoiceLineTransactionCustomType:
@@ -7689,49 +5895,6 @@ components:
           $ref: '#/components/schemas/InvoiceLineType_exchangeRates'
         custom:
           $ref: '#/components/schemas/InvoiceLineCustomType'
-      example:
-        claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-        notes: null
-        customFields: null
-        custom: {}
-        claimedQuantityTypeId: claimedQuantityTypeId
-        approvedQuantityTypeId: approvedQuantityTypeId
-        exchangeRates:
-          exchangeRate:
-          - exchangeDate: 2000-01-23T04:56:07.000+00:00
-            exchangeRate: 7.4577447736837658709418974467553198337554931640625
-            sourceCurrencyId: sourceCurrencyId
-            targetCurrencyId: targetCurrencyId
-          - exchangeDate: 2000-01-23T04:56:07.000+00:00
-            exchangeRate: 7.4577447736837658709418974467553198337554931640625
-            sourceCurrencyId: sourceCurrencyId
-            targetCurrencyId: targetCurrencyId
-        procedureId: procedureId
-        procedureTypeId: procedureTypeId
-        approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-        externalReferenceId: externalReferenceId
-        placeOfServiceId: placeOfServiceId
-        salesEntityNbr: 1
-        classId: classId
-        amounts:
-          amount:
-          - productAmount: null
-            amountId: amountId
-            invoiceAmount:
-              amount: 6.8468526983526398765889098285697400569915771484375
-              currencyId: currencyId
-            paymentAmount: null
-          - productAmount: null
-            amountId: amountId
-            invoiceAmount:
-              amount: 6.8468526983526398765889098285697400569915771484375
-              currencyId: currencyId
-            paymentAmount: null
-        providerId: providerId
-        serviceNbr: 1
-        dateOfService: 2000-01-23T04:56:07.000+00:00
-        invoiceLineNbr: 2
-        authorisationNbr: 7
     SearchInvoiceImportCBMType:
       type: object
       properties:
@@ -7754,91 +5917,6 @@ components:
       properties:
         invoiceImports:
           $ref: '#/components/schemas/InvoiceImportsType'
-      example:
-        invoiceImports:
-          invoiceImport:
-          - invoiceImportTransactions:
-              invoiceImportTransaction:
-              - batchNbr: 7
-                policyId: policyId
-                invoiceNbr: 2
-                importNbr: 5
-                importStatusId: importStatusId
-                memberId: memberId
-                failedReason: failedReason
-              - batchNbr: 7
-                policyId: policyId
-                invoiceNbr: 2
-                importNbr: 5
-                importStatusId: importStatusId
-                memberId: memberId
-                failedReason: failedReason
-            batchNbr: 6
-            notes:
-              note:
-              - noteType:
-                  note: note
-                  noteNbr: 3
-                  noteTypeId: noteTypeId
-                deletionDate: 2000-01-23T04:56:07.000+00:00
-                deletionUser: deletionUser
-              - noteType:
-                  note: note
-                  noteNbr: 3
-                  noteTypeId: noteTypeId
-                deletionDate: 2000-01-23T04:56:07.000+00:00
-                deletionUser: deletionUser
-            importNbr: 0
-            successfulTransactionsCount: 1
-            submittedByNbr: submittedByNbr
-            submitterType: PROVIDER
-            failedTransactionsCount: 5
-            importDate: 2000-01-23T04:56:07.000+00:00
-            importUserId: importUserId
-            importStatusId: importStatusId
-            receivedDate: 2000-01-23T04:56:07.000+00:00
-            failedReason: failedReason
-          - invoiceImportTransactions:
-              invoiceImportTransaction:
-              - batchNbr: 7
-                policyId: policyId
-                invoiceNbr: 2
-                importNbr: 5
-                importStatusId: importStatusId
-                memberId: memberId
-                failedReason: failedReason
-              - batchNbr: 7
-                policyId: policyId
-                invoiceNbr: 2
-                importNbr: 5
-                importStatusId: importStatusId
-                memberId: memberId
-                failedReason: failedReason
-            batchNbr: 6
-            notes:
-              note:
-              - noteType:
-                  note: note
-                  noteNbr: 3
-                  noteTypeId: noteTypeId
-                deletionDate: 2000-01-23T04:56:07.000+00:00
-                deletionUser: deletionUser
-              - noteType:
-                  note: note
-                  noteNbr: 3
-                  noteTypeId: noteTypeId
-                deletionDate: 2000-01-23T04:56:07.000+00:00
-                deletionUser: deletionUser
-            importNbr: 0
-            successfulTransactionsCount: 1
-            submittedByNbr: submittedByNbr
-            submitterType: PROVIDER
-            failedTransactionsCount: 5
-            importDate: 2000-01-23T04:56:07.000+00:00
-            importUserId: importUserId
-            importStatusId: importStatusId
-            receivedDate: 2000-01-23T04:56:07.000+00:00
-            failedReason: failedReason
     InvoiceImportsType:
       type: object
       properties:
@@ -7847,90 +5925,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceImportType'
-      example:
-        invoiceImport:
-        - invoiceImportTransactions:
-            invoiceImportTransaction:
-            - batchNbr: 7
-              policyId: policyId
-              invoiceNbr: 2
-              importNbr: 5
-              importStatusId: importStatusId
-              memberId: memberId
-              failedReason: failedReason
-            - batchNbr: 7
-              policyId: policyId
-              invoiceNbr: 2
-              importNbr: 5
-              importStatusId: importStatusId
-              memberId: memberId
-              failedReason: failedReason
-          batchNbr: 6
-          notes:
-            note:
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              deletionDate: 2000-01-23T04:56:07.000+00:00
-              deletionUser: deletionUser
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              deletionDate: 2000-01-23T04:56:07.000+00:00
-              deletionUser: deletionUser
-          importNbr: 0
-          successfulTransactionsCount: 1
-          submittedByNbr: submittedByNbr
-          submitterType: PROVIDER
-          failedTransactionsCount: 5
-          importDate: 2000-01-23T04:56:07.000+00:00
-          importUserId: importUserId
-          importStatusId: importStatusId
-          receivedDate: 2000-01-23T04:56:07.000+00:00
-          failedReason: failedReason
-        - invoiceImportTransactions:
-            invoiceImportTransaction:
-            - batchNbr: 7
-              policyId: policyId
-              invoiceNbr: 2
-              importNbr: 5
-              importStatusId: importStatusId
-              memberId: memberId
-              failedReason: failedReason
-            - batchNbr: 7
-              policyId: policyId
-              invoiceNbr: 2
-              importNbr: 5
-              importStatusId: importStatusId
-              memberId: memberId
-              failedReason: failedReason
-          batchNbr: 6
-          notes:
-            note:
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              deletionDate: 2000-01-23T04:56:07.000+00:00
-              deletionUser: deletionUser
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              deletionDate: 2000-01-23T04:56:07.000+00:00
-              deletionUser: deletionUser
-          importNbr: 0
-          successfulTransactionsCount: 1
-          submittedByNbr: submittedByNbr
-          submitterType: PROVIDER
-          failedTransactionsCount: 5
-          importDate: 2000-01-23T04:56:07.000+00:00
-          importUserId: importUserId
-          importStatusId: importStatusId
-          receivedDate: 2000-01-23T04:56:07.000+00:00
-          failedReason: failedReason
     CreateInvoiceImportCBMType:
       required:
       - invoiceImport
@@ -7945,48 +5939,6 @@ components:
       properties:
         queue:
           $ref: '#/components/schemas/QueueItemType'
-      example:
-        queue:
-          resourceId: resourceId
-          errorDetailList:
-            errorDetail:
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          externalReference: externalReference
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          subItemList:
-            subItem:
-            - null
-            - null
-          queueParentNbr: 6
-          queueNbr: 0
-          resourceVerb: PUT
-          queueItemNbr: 1
-          status: PENDING
     InvoiceImportNoteType:
       type: object
       properties:
@@ -7998,13 +5950,6 @@ components:
         deletionDate:
           type: string
           format: date-time
-      example:
-        noteType:
-          note: note
-          noteNbr: 3
-          noteTypeId: noteTypeId
-        deletionDate: 2000-01-23T04:56:07.000+00:00
-        deletionUser: deletionUser
     InvoiceImportSubmitterType:
       type: string
       enum:
@@ -8031,14 +5976,6 @@ components:
         failedReason:
           maxLength: 2000
           type: string
-      example:
-        batchNbr: 7
-        policyId: policyId
-        invoiceNbr: 2
-        importNbr: 5
-        importStatusId: importStatusId
-        memberId: memberId
-        failedReason: failedReason
     InvoiceImportType:
       required:
       - importStatusId
@@ -8079,48 +6016,6 @@ components:
           $ref: '#/components/schemas/InvoiceImportType_invoiceImportTransactions'
         notes:
           $ref: '#/components/schemas/InvoiceImportType_notes'
-      example:
-        invoiceImportTransactions:
-          invoiceImportTransaction:
-          - batchNbr: 7
-            policyId: policyId
-            invoiceNbr: 2
-            importNbr: 5
-            importStatusId: importStatusId
-            memberId: memberId
-            failedReason: failedReason
-          - batchNbr: 7
-            policyId: policyId
-            invoiceNbr: 2
-            importNbr: 5
-            importStatusId: importStatusId
-            memberId: memberId
-            failedReason: failedReason
-        batchNbr: 6
-        notes:
-          note:
-          - noteType:
-              note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            deletionDate: 2000-01-23T04:56:07.000+00:00
-            deletionUser: deletionUser
-          - noteType:
-              note: note
-              noteNbr: 3
-              noteTypeId: noteTypeId
-            deletionDate: 2000-01-23T04:56:07.000+00:00
-            deletionUser: deletionUser
-        importNbr: 0
-        successfulTransactionsCount: 1
-        submittedByNbr: submittedByNbr
-        submitterType: PROVIDER
-        failedTransactionsCount: 5
-        importDate: 2000-01-23T04:56:07.000+00:00
-        importUserId: importUserId
-        importStatusId: importStatusId
-        receivedDate: 2000-01-23T04:56:07.000+00:00
-        failedReason: failedReason
     InvoiceImportCustomType:
       type: object
     InvoiceImportRequestType:
@@ -8161,48 +6056,6 @@ components:
       properties:
         queue:
           $ref: '#/components/schemas/QueueItemType'
-      example:
-        queue:
-          resourceId: resourceId
-          errorDetailList:
-            errorDetail:
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          externalReference: externalReference
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          subItemList:
-            subItem:
-            - null
-            - null
-          queueParentNbr: 6
-          queueNbr: 0
-          resourceVerb: PUT
-          queueItemNbr: 1
-          status: PENDING
     ReportedInvoiceType:
       required:
       - invoiceNbr
@@ -8217,10 +6070,6 @@ components:
         reportTypeId:
           maxLength: 6
           type: string
-      example:
-        invoiceNbr: 6
-        reportTypeId: reportTypeId
-        reportNbr: 1
     InvoiceReportType:
       required:
       - reportDate
@@ -8239,18 +6088,6 @@ components:
           type: string
         reportedInvoices:
           $ref: '#/components/schemas/ReportedInvoicesListType'
-      example:
-        reportedInvoices:
-          reportedInvoice:
-          - invoiceNbr: 6
-            reportTypeId: reportTypeId
-            reportNbr: 1
-          - invoiceNbr: 6
-            reportTypeId: reportTypeId
-            reportNbr: 1
-        reportDate: 2000-01-23T04:56:07.000+00:00
-        reportUserId: reportUserId
-        runNumber: 0
     ReportedInvoicesListType:
       type: object
       properties:
@@ -8259,14 +6096,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ReportedInvoiceType'
-      example:
-        reportedInvoice:
-        - invoiceNbr: 6
-          reportTypeId: reportTypeId
-          reportNbr: 1
-        - invoiceNbr: 6
-          reportTypeId: reportTypeId
-          reportNbr: 1
     SearchClaimDataAreaType:
       type: object
       properties:
@@ -8301,10 +6130,6 @@ components:
           type: string
         noteNbr:
           type: integer
-      example:
-        note: note
-        noteNbr: 3
-        noteTypeId: noteTypeId
     ExchangeRateType:
       required:
       - currencyId
@@ -8319,10 +6144,6 @@ components:
           type: string
         exchangeRate:
           type: number
-      example:
-        exchangeRateNbr: exchangeRateNbr
-        exchangeRate: 7.061401241503109105224211816675961017608642578125
-        currencyId: currencyId
     ErrorInfoType:
       required:
       - error
@@ -8378,18 +6199,6 @@ components:
           type: string
         errorMessageParameterlList:
           $ref: '#/components/schemas/ErrorType_errorMessageParameterlList'
-      example:
-        fieldName: fieldName
-        errorDescription: errorDescription
-        errorMessageParameterlList:
-          errorMessageParameter:
-          - paramKey: paramKey
-            paramValue: paramValue
-          - paramKey: paramKey
-            paramValue: paramValue
-        entityName: entityName
-        errorCode: errorCode
-        fieldValue: fieldValue
     IncidentInfoType:
       type: object
       properties:
@@ -8415,48 +6224,6 @@ components:
           $ref: '#/components/schemas/CaseInfoType'
         custom:
           $ref: '#/components/schemas/IncidentCustomType'
-      example:
-        policyNbr: 5
-        IncidentTypeInfo:
-          hospitalisationInfo:
-            dischargeTime: dischargeTime
-            admissionDate: 2000-01-23
-            admissionTypeId: admissionTypeId
-            dischargeDate: 2000-01-23
-            admissionTime: admissionTime
-            admissionSourceId: admissionSourceId
-            incidentClassId: incidentClassId
-            estimatedLengthOfStay: 9
-          outpatientInfo:
-            perscriptionDate: 2000-01-23T04:56:07.000+00:00
-        memberNbr: 4
-        incidentCategoryId: INPATIENT
-        incidentNbr: 1
-        providerId: providerId
-        custom: {}
-        incidentStatusId: incidentStatusId
-        diagnoses:
-          diagnosis:
-          - diagnosisNbr: 9
-            notes: null
-            diagnosisTypeId: diagnosisTypeId
-            diagnosisId: diagnosisId
-            diagnosisDate: 2000-01-23T04:56:07.000+00:00
-            diagnosisQualifierId: diagnosisQualifierId
-            incidentDiagnosisCustomFields: null
-          - diagnosisNbr: 9
-            notes: null
-            diagnosisTypeId: diagnosisTypeId
-            diagnosisId: diagnosisId
-            diagnosisDate: 2000-01-23T04:56:07.000+00:00
-            diagnosisQualifierId: diagnosisQualifierId
-            incidentDiagnosisCustomFields: null
-        case:
-          caseStatusId: caseStatusId
-          caseCategoryId: caseCategoryId
-          memberNbr: 8
-          custom: {}
-          caseNbr: 6
     IncidentTypeInfo:
       type: object
       properties:
@@ -8464,18 +6231,6 @@ components:
           $ref: '#/components/schemas/HospitalisationInfoType'
         outpatientInfo:
           $ref: '#/components/schemas/OutpatientInfoType'
-      example:
-        hospitalisationInfo:
-          dischargeTime: dischargeTime
-          admissionDate: 2000-01-23
-          admissionTypeId: admissionTypeId
-          dischargeDate: 2000-01-23
-          admissionTime: admissionTime
-          admissionSourceId: admissionSourceId
-          incidentClassId: incidentClassId
-          estimatedLengthOfStay: 9
-        outpatientInfo:
-          perscriptionDate: 2000-01-23T04:56:07.000+00:00
     HospitalisationInfoType:
       type: object
       properties:
@@ -8502,23 +6257,12 @@ components:
           format: time
         estimatedLengthOfStay:
           type: integer
-      example:
-        dischargeTime: dischargeTime
-        admissionDate: 2000-01-23
-        admissionTypeId: admissionTypeId
-        dischargeDate: 2000-01-23
-        admissionTime: admissionTime
-        admissionSourceId: admissionSourceId
-        incidentClassId: incidentClassId
-        estimatedLengthOfStay: 9
     OutpatientInfoType:
       type: object
       properties:
         perscriptionDate:
           type: string
           format: date-time
-      example:
-        perscriptionDate: 2000-01-23T04:56:07.000+00:00
     IncidentCustomType:
       type: object
     IncidentDiagnosisType:
@@ -8546,14 +6290,6 @@ components:
           $ref: '#/components/schemas/InvoiceType_notes'
         incidentDiagnosisCustomFields:
           $ref: '#/components/schemas/ClaimType_customFields'
-      example:
-        diagnosisNbr: 9
-        notes: null
-        diagnosisTypeId: diagnosisTypeId
-        diagnosisId: diagnosisId
-        diagnosisDate: 2000-01-23T04:56:07.000+00:00
-        diagnosisQualifierId: diagnosisQualifierId
-        incidentDiagnosisCustomFields: null
     CaseInfoType:
       type: object
       properties:
@@ -8569,12 +6305,6 @@ components:
           type: string
         custom:
           $ref: '#/components/schemas/CaseCustomType'
-      example:
-        caseStatusId: caseStatusId
-        caseCategoryId: caseCategoryId
-        memberNbr: 8
-        custom: {}
-        caseNbr: 6
     CancelInvoiceCBMType:
       required:
       - invoiceNbr
@@ -8595,88 +6325,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/QueueItemType'
-      example:
-        queueItem:
-        - resourceId: resourceId
-          errorDetailList:
-            errorDetail:
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          externalReference: externalReference
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          subItemList:
-            subItem:
-            - null
-            - null
-          queueParentNbr: 6
-          queueNbr: 0
-          resourceVerb: PUT
-          queueItemNbr: 1
-          status: PENDING
-        - resourceId: resourceId
-          errorDetailList:
-            errorDetail:
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-            - fieldName: fieldName
-              errorDescription: errorDescription
-              errorMessageParameterlList:
-                errorMessageParameter:
-                - paramKey: paramKey
-                  paramValue: paramValue
-                - paramKey: paramKey
-                  paramValue: paramValue
-              entityName: entityName
-              errorCode: errorCode
-              fieldValue: fieldValue
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          externalReference: externalReference
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          subItemList:
-            subItem:
-            - null
-            - null
-          queueParentNbr: 6
-          queueNbr: 0
-          resourceVerb: PUT
-          queueItemNbr: 1
-          status: PENDING
     CaseCustomType:
       type: object
     CustomFieldType:
@@ -8692,10 +6340,6 @@ components:
           type: string
         fieldNbr:
           type: integer
-      example:
-        fieldNbr: 9
-        customFieldId: customFieldId
-        value: value
     QueueItemType:
       required:
       - creationDate
@@ -8736,47 +6380,6 @@ components:
           $ref: '#/components/schemas/QueueItemType_errorDetailList'
         subItemList:
           $ref: '#/components/schemas/QueueItemType_subItemList'
-      example:
-        resourceId: resourceId
-        errorDetailList:
-          errorDetail:
-          - fieldName: fieldName
-            errorDescription: errorDescription
-            errorMessageParameterlList:
-              errorMessageParameter:
-              - paramKey: paramKey
-                paramValue: paramValue
-              - paramKey: paramKey
-                paramValue: paramValue
-            entityName: entityName
-            errorCode: errorCode
-            fieldValue: fieldValue
-          - fieldName: fieldName
-            errorDescription: errorDescription
-            errorMessageParameterlList:
-              errorMessageParameter:
-              - paramKey: paramKey
-                paramValue: paramValue
-              - paramKey: paramKey
-                paramValue: paramValue
-            entityName: entityName
-            errorCode: errorCode
-            fieldValue: fieldValue
-        resourcePath: resourcePath
-        errorMessage: errorMessage
-        errorCode: errorCode
-        creationDate: 2000-01-23T04:56:07.000+00:00
-        externalReference: externalReference
-        modificationDate: 2000-01-23T04:56:07.000+00:00
-        subItemList:
-          subItem:
-          - null
-          - null
-        queueParentNbr: 6
-        queueNbr: 0
-        resourceVerb: PUT
-        queueItemNbr: 1
-        status: PENDING
     QueueStatusType:
       type: string
       enum:
@@ -8805,62 +6408,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BatchType'
-      example:
-        batch:
-        - batchNbr: 0
-          notes:
-            note:
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              redefinedTextId: redefinedTextId
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              redefinedTextId: redefinedTextId
-          custom: {}
-          submittedById: submittedById
-          batchAmount:
-            amount: 6.8468526983526398765889098285697400569915771484375
-            currencyId: currencyId
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          submissionMethod: EMAIL
-          creationUserId: creationUserId
-          numberOfInvoices: 6
-          externalBatchRefId: externalBatchRefId
-          statusId: statusId
-          submitterTypeId: submitterTypeId
-          paymentDate: 2000-01-23T04:56:07.000+00:00
-          receivedDate: 2000-01-23T04:56:07.000+00:00
-        - batchNbr: 0
-          notes:
-            note:
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              redefinedTextId: redefinedTextId
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              redefinedTextId: redefinedTextId
-          custom: {}
-          submittedById: submittedById
-          batchAmount:
-            amount: 6.8468526983526398765889098285697400569915771484375
-            currencyId: currencyId
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          submissionMethod: EMAIL
-          creationUserId: creationUserId
-          numberOfInvoices: 6
-          externalBatchRefId: externalBatchRefId
-          statusId: statusId
-          submitterTypeId: submitterTypeId
-          paymentDate: 2000-01-23T04:56:07.000+00:00
-          receivedDate: 2000-01-23T04:56:07.000+00:00
     CreateBatchResponseCBMType:
       required:
       - batch
@@ -8868,53 +6415,11 @@ components:
       properties:
         batch:
           $ref: '#/components/schemas/BatchType'
-      example:
-        batch:
-          batchNbr: 0
-          notes:
-            note:
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              redefinedTextId: redefinedTextId
-            - noteType:
-                note: note
-                noteNbr: 3
-                noteTypeId: noteTypeId
-              redefinedTextId: redefinedTextId
-          custom: {}
-          submittedById: submittedById
-          batchAmount:
-            amount: 6.8468526983526398765889098285697400569915771484375
-            currencyId: currencyId
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          submissionMethod: EMAIL
-          creationUserId: creationUserId
-          numberOfInvoices: 6
-          externalBatchRefId: externalBatchRefId
-          statusId: statusId
-          submitterTypeId: submitterTypeId
-          paymentDate: 2000-01-23T04:56:07.000+00:00
-          receivedDate: 2000-01-23T04:56:07.000+00:00
     SearchInvoiceReportResponseCBMType:
       type: object
       properties:
         invoiceReport:
           $ref: '#/components/schemas/InvoiceReportType'
-      example:
-        invoiceReport:
-          reportedInvoices:
-            reportedInvoice:
-            - invoiceNbr: 6
-              reportTypeId: reportTypeId
-              reportNbr: 1
-            - invoiceNbr: 6
-              reportTypeId: reportTypeId
-              reportNbr: 1
-          reportDate: 2000-01-23T04:56:07.000+00:00
-          reportUserId: reportUserId
-          runNumber: 0
     ReportInvoicesCBMType:
       type: object
       properties:
@@ -8931,21 +6436,6 @@ components:
           $ref: '#/components/schemas/ProfessionalInfoType'
         allowanceInfo:
           $ref: '#/components/schemas/AllowanceInfoType'
-      example:
-        professionalInfo:
-          claimFrequencyTypeId: claimFrequencyTypeId
-          prescriptionDate: 2000-01-23T04:56:07.000+00:00
-          referralDate: 2000-01-23T04:56:07.000+00:00
-          invoiceDate: 2000-01-23T04:56:07.000+00:00
-        allowanceInfo:
-          invoiceDate: 2000-01-23T04:56:07.000+00:00
-        institutionalInfo:
-          claimFrequencyTypeId: claimFrequencyTypeId
-          placeOfServiceId: placeOfServiceId
-          serviceDateFrom: 2000-01-23T04:56:07.000+00:00
-          countryOfTreatmentId: countryOfTreatmentId
-          serviceDateTo: 2000-01-23T04:56:07.000+00:00
-          invoiceDate: 2000-01-23T04:56:07.000+00:00
     IncidentType:
       type: string
       enum:
@@ -9012,34 +6502,6 @@ components:
         quantityQualifierId:
           maxLength: 6
           type: string
-      example:
-        memberNbr: 5
-        insurerQuantity: 7.4577447736837658709418974467553198337554931640625
-        ruleStopDate: 2000-01-23T04:56:07.000+00:00
-        coverageRuleNbr: 4
-        actualCopayAmount:
-          amount: 6.8468526983526398765889098285697400569915771484375
-          currencyId: currencyId
-        packageRuleNbr: 7
-        ruleExtendNbr: 1
-        leveid: 1
-        appliedLevel: PACKAGE
-        claimNbr: 3
-        insuredAmount: null
-        policyNbr: 6
-        invoiceStatusId: invoiceStatusId
-        invoiceNbr: 0
-        insurerAmount: null
-        coverageCriterionNbr: 2
-        ruleStartDate: 2000-01-23T04:56:07.000+00:00
-        quantityQualifierId: quantityQualifierId
-        principalNbr: 5
-        insuredQuantity: 6.8468526983526398765889098285697400569915771484375
-        insuranceCompanyNbr: 1
-        incidentNbr: 9
-        productCurrencyId: 1
-        caseNbr: 7
-        invoiceLineNbr: 2
     AppliedLevelType:
       type: string
       enum:
@@ -9054,62 +6516,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceTransactionType'
-      example:
-        invoice:
-        - memberNbr: 5
-          insurerQuantity: 7.4577447736837658709418974467553198337554931640625
-          ruleStopDate: 2000-01-23T04:56:07.000+00:00
-          coverageRuleNbr: 4
-          actualCopayAmount:
-            amount: 6.8468526983526398765889098285697400569915771484375
-            currencyId: currencyId
-          packageRuleNbr: 7
-          ruleExtendNbr: 1
-          leveid: 1
-          appliedLevel: PACKAGE
-          claimNbr: 3
-          insuredAmount: null
-          policyNbr: 6
-          invoiceStatusId: invoiceStatusId
-          invoiceNbr: 0
-          insurerAmount: null
-          coverageCriterionNbr: 2
-          ruleStartDate: 2000-01-23T04:56:07.000+00:00
-          quantityQualifierId: quantityQualifierId
-          principalNbr: 5
-          insuredQuantity: 6.8468526983526398765889098285697400569915771484375
-          insuranceCompanyNbr: 1
-          incidentNbr: 9
-          productCurrencyId: 1
-          caseNbr: 7
-          invoiceLineNbr: 2
-        - memberNbr: 5
-          insurerQuantity: 7.4577447736837658709418974467553198337554931640625
-          ruleStopDate: 2000-01-23T04:56:07.000+00:00
-          coverageRuleNbr: 4
-          actualCopayAmount:
-            amount: 6.8468526983526398765889098285697400569915771484375
-            currencyId: currencyId
-          packageRuleNbr: 7
-          ruleExtendNbr: 1
-          leveid: 1
-          appliedLevel: PACKAGE
-          claimNbr: 3
-          insuredAmount: null
-          policyNbr: 6
-          invoiceStatusId: invoiceStatusId
-          invoiceNbr: 0
-          insurerAmount: null
-          coverageCriterionNbr: 2
-          ruleStartDate: 2000-01-23T04:56:07.000+00:00
-          quantityQualifierId: quantityQualifierId
-          principalNbr: 5
-          insuredQuantity: 6.8468526983526398765889098285697400569915771484375
-          insuranceCompanyNbr: 1
-          incidentNbr: 9
-          productCurrencyId: 1
-          caseNbr: 7
-          invoiceLineNbr: 2
     inline_response_400:
       required:
       - error400
@@ -9134,51 +6540,6 @@ components:
       properties:
         queueItem:
           $ref: '#/components/schemas/inline_response_202_queueItem'
-      example:
-        queueItem:
-          externalReference: externalReference
-          resourceId: resourceId
-          modificationDate: modificationDate
-          subItemList:
-            subItem:
-            - externalReference: externalReference
-              resourceId: resourceId
-              modificationDate: modificationDate
-              subItemList:
-                subItem:
-                - creationDate: creationDate
-                - creationDate: creationDate
-              queueParentNbr: 5
-              resourcePath: resourcePath
-              errorMessage: errorMessage
-              errorCode: errorCode
-              queueNbr: 5
-              queueItemNbr: 2
-              creationDate: creationDate
-              status: status
-            - externalReference: externalReference
-              resourceId: resourceId
-              modificationDate: modificationDate
-              subItemList:
-                subItem:
-                - creationDate: creationDate
-                - creationDate: creationDate
-              queueParentNbr: 5
-              resourcePath: resourcePath
-              errorMessage: errorMessage
-              errorCode: errorCode
-              queueNbr: 5
-              queueItemNbr: 2
-              creationDate: creationDate
-              status: status
-          queueParentNbr: 6
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          queueNbr: 0
-          queueItemNbr: 1
-          creationDate: creationDate
-          status: status
     CreateClaimDetailsCBMType_claims:
       required:
       - claim
@@ -9217,14 +6578,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CustomFieldType'
-      example:
-        customField:
-        - fieldNbr: 9
-          customFieldId: customFieldId
-          value: value
-        - fieldNbr: 9
-          customFieldId: customFieldId
-          value: value
     ClaimType_notes:
       type: object
       properties:
@@ -9233,22 +6586,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ClaimNoteType'
-      example:
-        note:
-        - creationUserId: creationUserId
-          noteType:
-            note: note
-            noteNbr: 3
-            noteTypeId: noteTypeId
-          predefinedTextId: predefinedTextId
-          creationDate: 2000-01-23T04:56:07.000+00:00
-        - creationUserId: creationUserId
-          noteType:
-            note: note
-            noteNbr: 3
-            noteTypeId: noteTypeId
-          predefinedTextId: predefinedTextId
-          creationDate: 2000-01-23T04:56:07.000+00:00
     ClaimType_incidents:
       type: object
       properties:
@@ -9257,10 +6594,6 @@ components:
           type: array
           items:
             type: integer
-      example:
-        incidentNbr:
-        - 2
-        - 2
     ClaimType_invoices:
       type: object
       properties:
@@ -9269,10 +6602,6 @@ components:
           type: array
           items:
             type: integer
-      example:
-        invoiceNbr:
-        - 7
-        - 7
     ClaimType_historyModifications:
       type: object
       properties:
@@ -9281,16 +6610,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/HistoryModificationType'
-      example:
-        historyModification:
-        - date: 2000-01-23T04:56:07.000+00:00
-          note: note
-          statusId: statusId
-          userId: userId
-        - date: 2000-01-23T04:56:07.000+00:00
-          note: note
-          statusId: statusId
-          userId: userId
     ClaimType_reserves:
       type: object
       properties:
@@ -9299,50 +6618,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ClaimReserveItemInfoType'
-      example:
-        reserve:
-        - creationUserId: creationUserId
-          reserveTypeId: ADD
-          amount: null
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          reserveDetails:
-            reserveDetail:
-            - amount: null
-              reserveNbr: 2
-              levelId: 1
-              levelValue: 2
-            - amount: null
-              reserveNbr: 2
-              levelId: 1
-              levelValue: 2
-          comments: comments
-          reserveNbr: 7
-          totalReserveDetailAmount: null
-          custom: null
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          reserveDate: 2000-01-23T04:56:07.000+00:00
-          modificationUserId: modificationUserId
-        - creationUserId: creationUserId
-          reserveTypeId: ADD
-          amount: null
-          modificationDate: 2000-01-23T04:56:07.000+00:00
-          reserveDetails:
-            reserveDetail:
-            - amount: null
-              reserveNbr: 2
-              levelId: 1
-              levelValue: 2
-            - amount: null
-              reserveNbr: 2
-              levelId: 1
-              levelValue: 2
-          comments: comments
-          reserveNbr: 7
-          totalReserveDetailAmount: null
-          custom: null
-          creationDate: 2000-01-23T04:56:07.000+00:00
-          reserveDate: 2000-01-23T04:56:07.000+00:00
-          modificationUserId: modificationUserId
     ClaimReserveItemInfoType_reserveDetails:
       type: object
       properties:
@@ -9351,16 +6626,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ReserveDetailType'
-      example:
-        reserveDetail:
-        - amount: null
-          reserveNbr: 2
-          levelId: 1
-          levelValue: 2
-        - amount: null
-          reserveNbr: 2
-          levelId: 1
-          levelValue: 2
     ClaimItemInfoType_reserves:
       required:
       - reserve
@@ -9379,18 +6644,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BatchNoteType'
-      example:
-        note:
-        - noteType:
-            note: note
-            noteNbr: 3
-            noteTypeId: noteTypeId
-          redefinedTextId: redefinedTextId
-        - noteType:
-            note: note
-            noteNbr: 3
-            noteTypeId: noteTypeId
-          redefinedTextId: redefinedTextId
     InvoiceType_exchangeRates:
       type: object
       properties:
@@ -9399,14 +6652,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ExchangeRateType'
-      example:
-        exchangeRate:
-        - exchangeRateNbr: exchangeRateNbr
-          exchangeRate: 7.061401241503109105224211816675961017608642578125
-          currencyId: currencyId
-        - exchangeRateNbr: exchangeRateNbr
-          exchangeRate: 7.061401241503109105224211816675961017608642578125
-          currencyId: currencyId
     InvoiceType_notes:
       type: object
       properties:
@@ -9415,14 +6660,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/NoteType'
-      example:
-        note:
-        - note: note
-          noteNbr: 3
-          noteTypeId: noteTypeId
-        - note: note
-          noteNbr: 3
-          noteTypeId: noteTypeId
     InvoiceType_invoiceLines:
       type: object
       properties:
@@ -9431,92 +6668,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceLineType'
-      example:
-        invoiceLine:
-        - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-          notes: null
-          customFields: null
-          custom: {}
-          claimedQuantityTypeId: claimedQuantityTypeId
-          approvedQuantityTypeId: approvedQuantityTypeId
-          exchangeRates:
-            exchangeRate:
-            - exchangeDate: 2000-01-23T04:56:07.000+00:00
-              exchangeRate: 7.4577447736837658709418974467553198337554931640625
-              sourceCurrencyId: sourceCurrencyId
-              targetCurrencyId: targetCurrencyId
-            - exchangeDate: 2000-01-23T04:56:07.000+00:00
-              exchangeRate: 7.4577447736837658709418974467553198337554931640625
-              sourceCurrencyId: sourceCurrencyId
-              targetCurrencyId: targetCurrencyId
-          procedureId: procedureId
-          procedureTypeId: procedureTypeId
-          approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-          externalReferenceId: externalReferenceId
-          placeOfServiceId: placeOfServiceId
-          salesEntityNbr: 1
-          classId: classId
-          amounts:
-            amount:
-            - productAmount: null
-              amountId: amountId
-              invoiceAmount:
-                amount: 6.8468526983526398765889098285697400569915771484375
-                currencyId: currencyId
-              paymentAmount: null
-            - productAmount: null
-              amountId: amountId
-              invoiceAmount:
-                amount: 6.8468526983526398765889098285697400569915771484375
-                currencyId: currencyId
-              paymentAmount: null
-          providerId: providerId
-          serviceNbr: 1
-          dateOfService: 2000-01-23T04:56:07.000+00:00
-          invoiceLineNbr: 2
-          authorisationNbr: 7
-        - claimedQuantity: 4.1456080298839363962315474054776132106781005859375
-          notes: null
-          customFields: null
-          custom: {}
-          claimedQuantityTypeId: claimedQuantityTypeId
-          approvedQuantityTypeId: approvedQuantityTypeId
-          exchangeRates:
-            exchangeRate:
-            - exchangeDate: 2000-01-23T04:56:07.000+00:00
-              exchangeRate: 7.4577447736837658709418974467553198337554931640625
-              sourceCurrencyId: sourceCurrencyId
-              targetCurrencyId: targetCurrencyId
-            - exchangeDate: 2000-01-23T04:56:07.000+00:00
-              exchangeRate: 7.4577447736837658709418974467553198337554931640625
-              sourceCurrencyId: sourceCurrencyId
-              targetCurrencyId: targetCurrencyId
-          procedureId: procedureId
-          procedureTypeId: procedureTypeId
-          approvedQuantity: 1.024645700144157789424070870154537260532379150390625
-          externalReferenceId: externalReferenceId
-          placeOfServiceId: placeOfServiceId
-          salesEntityNbr: 1
-          classId: classId
-          amounts:
-            amount:
-            - productAmount: null
-              amountId: amountId
-              invoiceAmount:
-                amount: 6.8468526983526398765889098285697400569915771484375
-                currencyId: currencyId
-              paymentAmount: null
-            - productAmount: null
-              amountId: amountId
-              invoiceAmount:
-                amount: 6.8468526983526398765889098285697400569915771484375
-                currencyId: currencyId
-              paymentAmount: null
-          providerId: providerId
-          serviceNbr: 1
-          dateOfService: 2000-01-23T04:56:07.000+00:00
-          invoiceLineNbr: 2
-          authorisationNbr: 7
     InvoiceLineType_amounts:
       type: object
       properties:
@@ -9525,20 +6676,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceLineAmountType'
-      example:
-        amount:
-        - productAmount: null
-          amountId: amountId
-          invoiceAmount:
-            amount: 6.8468526983526398765889098285697400569915771484375
-            currencyId: currencyId
-          paymentAmount: null
-        - productAmount: null
-          amountId: amountId
-          invoiceAmount:
-            amount: 6.8468526983526398765889098285697400569915771484375
-            currencyId: currencyId
-          paymentAmount: null
     InvoiceLineType_exchangeRates:
       type: object
       properties:
@@ -9547,16 +6684,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceLineExchangeRateType'
-      example:
-        exchangeRate:
-        - exchangeDate: 2000-01-23T04:56:07.000+00:00
-          exchangeRate: 7.4577447736837658709418974467553198337554931640625
-          sourceCurrencyId: sourceCurrencyId
-          targetCurrencyId: targetCurrencyId
-        - exchangeDate: 2000-01-23T04:56:07.000+00:00
-          exchangeRate: 7.4577447736837658709418974467553198337554931640625
-          sourceCurrencyId: sourceCurrencyId
-          targetCurrencyId: targetCurrencyId
     InvoiceImportType_invoiceImportTransactions:
       type: object
       properties:
@@ -9565,22 +6692,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceImportTransactionType'
-      example:
-        invoiceImportTransaction:
-        - batchNbr: 7
-          policyId: policyId
-          invoiceNbr: 2
-          importNbr: 5
-          importStatusId: importStatusId
-          memberId: memberId
-          failedReason: failedReason
-        - batchNbr: 7
-          policyId: policyId
-          invoiceNbr: 2
-          importNbr: 5
-          importStatusId: importStatusId
-          memberId: memberId
-          failedReason: failedReason
     InvoiceImportType_notes:
       type: object
       properties:
@@ -9589,20 +6700,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceImportNoteType'
-      example:
-        note:
-        - noteType:
-            note: note
-            noteNbr: 3
-            noteTypeId: noteTypeId
-          deletionDate: 2000-01-23T04:56:07.000+00:00
-          deletionUser: deletionUser
-        - noteType:
-            note: note
-            noteNbr: 3
-            noteTypeId: noteTypeId
-          deletionDate: 2000-01-23T04:56:07.000+00:00
-          deletionUser: deletionUser
     ErrorType_errorMessageParameterlList_errorMessageParameter:
       required:
       - paramKey
@@ -9613,9 +6710,6 @@ components:
           type: string
         paramValue:
           type: string
-      example:
-        paramKey: paramKey
-        paramValue: paramValue
     ErrorType_errorMessageParameterlList:
       type: object
       properties:
@@ -9624,12 +6718,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ErrorType_errorMessageParameterlList_errorMessageParameter'
-      example:
-        errorMessageParameter:
-        - paramKey: paramKey
-          paramValue: paramValue
-        - paramKey: paramKey
-          paramValue: paramValue
     IncidentInfoType_diagnoses:
       type: object
       properties:
@@ -9638,22 +6726,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/IncidentDiagnosisType'
-      example:
-        diagnosis:
-        - diagnosisNbr: 9
-          notes: null
-          diagnosisTypeId: diagnosisTypeId
-          diagnosisId: diagnosisId
-          diagnosisDate: 2000-01-23T04:56:07.000+00:00
-          diagnosisQualifierId: diagnosisQualifierId
-          incidentDiagnosisCustomFields: null
-        - diagnosisNbr: 9
-          notes: null
-          diagnosisTypeId: diagnosisTypeId
-          diagnosisId: diagnosisId
-          diagnosisDate: 2000-01-23T04:56:07.000+00:00
-          diagnosisQualifierId: diagnosisQualifierId
-          incidentDiagnosisCustomFields: null
     QueueItemType_errorDetailList:
       type: object
       properties:
@@ -9662,30 +6734,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ErrorType'
-      example:
-        errorDetail:
-        - fieldName: fieldName
-          errorDescription: errorDescription
-          errorMessageParameterlList:
-            errorMessageParameter:
-            - paramKey: paramKey
-              paramValue: paramValue
-            - paramKey: paramKey
-              paramValue: paramValue
-          entityName: entityName
-          errorCode: errorCode
-          fieldValue: fieldValue
-        - fieldName: fieldName
-          errorDescription: errorDescription
-          errorMessageParameterlList:
-            errorMessageParameter:
-            - paramKey: paramKey
-              paramValue: paramValue
-            - paramKey: paramKey
-              paramValue: paramValue
-          entityName: entityName
-          errorCode: errorCode
-          fieldValue: fieldValue
     QueueItemType_subItemList:
       type: object
       properties:
@@ -9694,10 +6742,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/QueueItemType'
-      example:
-        subItem:
-        - null
-        - null
     ReportInvoicesCBMType_invoiceList:
       type: object
       properties:
@@ -9723,8 +6767,6 @@ components:
       properties:
         creationDate:
           type: string
-      example:
-        creationDate: creationDate
     inline_response_202_queueItem_subItemList_subItemList:
       type: object
       properties:
@@ -9732,10 +6774,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/inline_response_202_queueItem_subItemList_subItemList_subItem'
-      example:
-        subItem:
-        - creationDate: creationDate
-        - creationDate: creationDate
     inline_response_202_queueItem_subItemList_subItem:
       type: object
       properties:
@@ -9763,22 +6801,6 @@ components:
           type: string
         subItemList:
           $ref: '#/components/schemas/inline_response_202_queueItem_subItemList_subItemList'
-      example:
-        externalReference: externalReference
-        resourceId: resourceId
-        modificationDate: modificationDate
-        subItemList:
-          subItem:
-          - creationDate: creationDate
-          - creationDate: creationDate
-        queueParentNbr: 5
-        resourcePath: resourcePath
-        errorMessage: errorMessage
-        errorCode: errorCode
-        queueNbr: 5
-        queueItemNbr: 2
-        creationDate: creationDate
-        status: status
     inline_response_202_queueItem_subItemList:
       type: object
       properties:
@@ -9786,38 +6808,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/inline_response_202_queueItem_subItemList_subItem'
-      example:
-        subItem:
-        - externalReference: externalReference
-          resourceId: resourceId
-          modificationDate: modificationDate
-          subItemList:
-            subItem:
-            - creationDate: creationDate
-            - creationDate: creationDate
-          queueParentNbr: 5
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          queueNbr: 5
-          queueItemNbr: 2
-          creationDate: creationDate
-          status: status
-        - externalReference: externalReference
-          resourceId: resourceId
-          modificationDate: modificationDate
-          subItemList:
-            subItem:
-            - creationDate: creationDate
-            - creationDate: creationDate
-          queueParentNbr: 5
-          resourcePath: resourcePath
-          errorMessage: errorMessage
-          errorCode: errorCode
-          queueNbr: 5
-          queueItemNbr: 2
-          creationDate: creationDate
-          status: status
     inline_response_202_queueItem:
       type: object
       properties:
@@ -9845,50 +6835,6 @@ components:
           type: string
         subItemList:
           $ref: '#/components/schemas/inline_response_202_queueItem_subItemList'
-      example:
-        externalReference: externalReference
-        resourceId: resourceId
-        modificationDate: modificationDate
-        subItemList:
-          subItem:
-          - externalReference: externalReference
-            resourceId: resourceId
-            modificationDate: modificationDate
-            subItemList:
-              subItem:
-              - creationDate: creationDate
-              - creationDate: creationDate
-            queueParentNbr: 5
-            resourcePath: resourcePath
-            errorMessage: errorMessage
-            errorCode: errorCode
-            queueNbr: 5
-            queueItemNbr: 2
-            creationDate: creationDate
-            status: status
-          - externalReference: externalReference
-            resourceId: resourceId
-            modificationDate: modificationDate
-            subItemList:
-              subItem:
-              - creationDate: creationDate
-              - creationDate: creationDate
-            queueParentNbr: 5
-            resourcePath: resourcePath
-            errorMessage: errorMessage
-            errorCode: errorCode
-            queueNbr: 5
-            queueItemNbr: 2
-            creationDate: creationDate
-            status: status
-        queueParentNbr: 6
-        resourcePath: resourcePath
-        errorMessage: errorMessage
-        errorCode: errorCode
-        queueNbr: 0
-        queueItemNbr: 1
-        creationDate: creationDate
-        status: status
   responses:
     "400":
       description: Invalid status value
@@ -10239,4 +7185,3 @@ components:
       explode: true
       schema:
         type: string
-
